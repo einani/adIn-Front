@@ -1,0 +1,73 @@
+<!-- 
+
+1. Move the first name and right name to separate blocks
+2. Put the bio in block 2 so it matches the line of the last name
+3. Put selectable squares in my tennis-court
+4. Create side menu and the top menu animation
+5. Fix scraping for shot data and attempt to sync with page
+6. If everything works, start scraping other stats
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="temp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class = "scroll-container">
+        <div class="frame-edge frame-top"></div>
+        <div class="frame-edge frame-bottom"></div>
+        <div class="frame-edge frame-left"></div>
+        <div class="frame-edge frame-right"></div>
+
+        <div class = "content">
+            <!-- <div class="ADIN_logo">
+            </div> -->
+            <div class = "navbar2">
+                <!-- <div class="ADIN_logo">
+                </div>  -->
+                <div id="sicon" class="pop">
+                    <i class="fas fa-search"></i>
+                </div>
+                <ul id="colorBox" class="nav-items">
+                    <li><a onclick="location.href='index.html'" class="nav-link tab">HOME</a></li>
+                    <li><a onclick="location.href='zPlayers.html'" class="nav-link tab">PLAYERS</a></li>
+                    <li><a onclick="location.href='zRankings.html'" class="nav-link tab">RANKINGS</a></li>
+                    <li><a onclick="location.href='tournaments.html'" class="nav-link tab">TOURNAMENTS</a></li>
+                    <li><a onclick="location.href='leaderboards.html'" class="nav-link tab">LEADERBOARDS</a></li>
+                    <li><a onclick="location.href='blog.html'" class="nav-link tab">BLOG</a></li>
+                    <li><a class="nav-link search">
+                        <i class="fas fa-search"></i>
+                    </a></li>
+                    <div class="search-container">
+                        <input id="search-input" type="text" placeholder="Search..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search...">
+                        <ul id="search-suggestions"></ul>
+                    </div>
+                </ul>
+                <div id="cicon" class="pop close">
+                    <i class="fas fa-x"></i>
+                </div>
+            </div>
+            <div class="top-text">
+                <div class="title-divider-horiz"></div>
+                <div class ="name2">
+                    <p id="full-width-title">ADVANTAGE:IN</p>
+                    <div class="live-events">
+                        <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><g clip-path="url(#clip0_6799_10812)"><path d="M8 5.03125C9.6396 5.03125 10.9688 6.3604 10.9688 8C10.9688 9.6396 9.6396 10.9688 8 10.9688C6.3604 10.9688 5.03125 9.6396 5.03125 8C5.03125 6.3604 6.3604 5.03125 8 5.03125Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C12.4183 0 16 3.58172 16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0ZM8 1.5C4.41015 1.5 1.5 4.41015 1.5 8C1.5 11.5899 4.41015 14.5 8 14.5C11.5899 14.5 14.5 11.5899 14.5 8C14.5 4.41015 11.5899 1.5 8 1.5Z" fill="currentColor"></path></g><defs><clipPath id="clip0_6799_10812"><rect width="16" height="16" fill="currentColor"></rect></clipPath></defs></svg>
+                        <h6 class="l-text">LIVE</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

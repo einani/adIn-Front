@@ -1,0 +1,230 @@
+TODO
+- MISC
+    - Get images for all players
+    - Make sure all pic credits are visible
+- LANDING PAGE
+    - Live Events to the right with a most recent score maybe
+- PLAYER SECTION
+    - Scrape other seasons
+    - Scrape challenger stats
+- SERVER SIDE
+    - Github cron scheduler in sub repo
+    - Site is hosted as static while taking data from sup repo
+
+
+
+
+
+
+DONE
+- SEARCH
+- Fix navbar on scroll color and apply to search icons (MISC)
+- PLAYER SECTION
+    - Side Menu
+        - Finalize visual
+        - Starts normal at middle of player section (scrolls with page) Just fix centering
+        - Once side menu is at the center of window, it becomes fixed there upon scroll (PLAYER SECTION)
+        - Make player section switchable (stats, bio, chart, etc.) (PLAYER SECTION)
+        - Create section divider (PLAYER SECTION)
+    - Scrape SLAMS, fix Cinci/Los cabos
+- SHOT CHART
+    - Finalize shot chart backend
+    - Put shot chart data into graphic
+    - Make toggles functional
+
+- LANDING PAGE
+    - Finish visual
+- TOURNAMENTS PAGE
+    - Finish visual
+    - Scrollable draw
+    - Buttons to move draw should be styled
+    - Tournament Performance Page
+- RANKINGS
+    - Finish visual
+    - Sortable functionality
+    - Sortable column names need cursor pointer
+    - Player description pop ups should be refined
+    - Data shouldn't have ch, nch just numbers. Also fix current tournament showing up elsewhere
+- MISCELLANEOUS
+    - Scrape rest of data
+- MATCHES 
+        - Same as tennisAbstract but sleek
+- FILE STRUCTURE
+
+
+
+
+
+
+
+STRETCH
+- TOURNAMENT INDIV
+    - Add past years
+    - Maybe add up and down arrows to move draw up and down
+- MISCELLANEOUS
+    - Any background image that I translate up needs to be edited in a photo app to cut
+      off the top so that the image doesn't leave white space upon resizing window
+- PLAYER SECTION
+    - OVERVIEW
+        - Put racket info under --01--
+    - STATS
+        - Put tour averages under --02--
+        - Make toggles functional
+        - Rank Data Analysis
+- SEARCH
+    - Client side fuzzy search with fuze.js
+
+
+
+
+
+
+
+
+
+
+Sinner - ]DONE]
+Alcaraz - ]DONE]
+Zverev - ]DONE] 
+Fritz - ]DONE]
+Draper - ]DONE] (eh)
+Djokovic - ]CLOSE] (eh)
+Ruud - ]DONE]
+De Minaur - ]DONE] (eh)
+Musetti - ]DONE]
+Rune - ]DONE]
+Medvedev - ]DONE]
+Shelton - ]DONE]
+Paul - ]DONE]
+Fils - ]DONE]
+Tiafoe - ]DONE]
+Dimitrov - ]DONE]
+Rublev - ]DONE]
+Cerundolo - ]DONE] (eh)
+Tsitsipas - ]DONE]
+Machac - ]CLOSE] (eh)
+Mensik - ]DONE]
+Humbert - ]DONE]
+Korda - ]CLOSE]
+Popyrin - 
+Khachanov - 
+Davidovich Fokina - 
+Shapovalov - 
+Auger Aliassime - 
+Berrettini - 
+Nakashima - 
+Michelsen - 
+Griekspoor - 
+Cobolli - 
+Hurkacz - 
+Baez - 
+Mpetshi Perricard - 
+Lehecka - 
+Thompson - 
+Arnaldi - 
+Muller - 
+Borges - 
+Monfils - 
+Giron - 
+Sonego - 
+Kecmanovic - 
+Darderi - 
+Goffin - 
+Bergs - 
+Martinez - 
+Halys - 
+Diallo - 
+Etcheverry - 
+Carabelli - 
+Fearnley - 
+Bautista Agut - 
+Bonzi - 
+Tabilo -
+Djere - 
+Nishikori - 
+Carballes Baena - 
+Marozsan - 
+Comesana - 
+Fonseca - 
+Bellucci - 
+Tien - 
+Munar - 
+Dzumhur - 
+Altmaier - 
+Shang - 
+Rinderknech - 
+Bublik - 
+Safiullin - 
+Nishioka - 
+Medjedovic - 
+Gaston - 
+Bu - ]DONE]
+Kovacevic - 
+Zhang - 
+Vukic - 
+O'Connell - 
+Hijikata - 
+Moutet - 
+Coric - 
+Collignon - 
+Kopriva - 
+Struff - 
+Majchrzak - 
+Van De Zandschulp - 
+Norrie - 
+Walton - 
+Duckworth - 
+De Jong - 
+Opelka - 
+Tseng - 
+McDonald - 
+Carreno Busta - 
+Shevchenko - 
+Nardi - 
+Navone - 
+Basavareddy - 
+
+
+
+
+
+
+
+
+
+
+shot_srv = ["1st", 
+            "2nd", 
+            "return"] # curr[1]
+
+shot_type = ["serve",                       0
+            "backhand",                     1
+            "forehand",                     2
+            "backhand slice",               3
+            "forehand chip/slice",          4
+            "backhand volley",              5
+            "forehand volley",              6
+            "backhand drop",                7
+            "forehand drop",                8
+            "trick",                        9
+            "smash"] # curr[2]             10
+
+shot_out = ["ace", 
+            "fault", 
+            "winner", 
+            " unforced error", 
+            " forced error"] # curr[0]
+
+shot_dir = ["down the T", 
+            "wide", 
+            "body", 
+            "cross", 
+            "inside-out", 
+            "inside-in", 
+            "inside out", 
+            "inside in", 
+            "down the line", 
+            "down the middle"] # curr[3, 4]
+
+
+

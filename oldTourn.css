@@ -1,0 +1,278 @@
+/* .content, .body {
+    height: 550vh;
+} */
+
+.draw-tree {
+    /* margin-top: 20vh; */
+    padding: 0 1vw;
+    /* background-color: #1e1e1e; */
+    background-color: rgba(18,18,18,0.7);
+    /* width: 90%; */
+    width: 80vw;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 2vw;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 34vw;
+}
+
+.bracket-controls {
+    display: flex;
+    justify-content: space-between;
+    /* text-align: center; */
+    height: 5vw;
+    width: 95%;
+    /* background-color: red; */
+    /* margin-bottom: 10px; */
+}
+
+.bracket-viewport {
+    overflow: hidden;
+    width: 95%;
+    /* width: 80vw; */
+    height: 34vw;
+    /* width: 1000px; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 2vw;
+    /* background-color: red; */
+}
+
+.b-wrapper {
+    /* display: flex;
+    transition: transform 0.4s ease; */
+    /* width: max-content;  */
+    width: 80vw;
+    /* allow it to stretch with children */
+}
+
+.b-head, .pd1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+/* .pd1 {
+    height: 1000px;
+    background-color: rebeccapurple;
+} */
+
+.bracket .round {
+    width: 15vw;
+    /* width: 300px; */
+    /* min-width: 20vw; */
+    flex-shrink: 0;
+}
+
+.b-head .round {
+    /* margin-top: 10px; */
+    height: 2.5vw;
+    width: 15vw;
+    /* background-color: chartreuse; */
+}
+
+.bracket {
+    display: flex;
+    /* width: 93%; */
+    /* justify-content: space-between; */
+    overflow-x: auto;
+    /* padding-top: 20px; */
+    position: relative;
+    overflow: hidden;
+    /* background-color: red; */
+}
+
+.round {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* min-width: 200px; */
+    /* width: 95%; */
+    /* gap: 30px; */
+    position: relative;
+    /* height: 625px; */
+    /* height: 950px; */
+    /* background-color: red; */
+}
+
+.round h3 {
+    font-size: 0.85vw;
+    color: #aaa;
+    margin-bottom: 0.5vw;
+
+    border-bottom: 2px solid var(--border-color);
+    /* padding-bottom: 5px; */
+
+    margin-top: 0.5vw;
+    /* background-color: red; */
+}
+
+.r1, .r2, .r3, .r4, .r5, .r6, .r7 {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    width: 100%;
+    /* height: 100%; */
+    /* height: 950px; */
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.r2 {
+    background-color: red;
+}
+
+/* 896 px total */
+/* 800 px of match */
+/*  96 px of margin */
+
+/* .r1 .match {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.r2 .match {    
+    margin-top: 31px;
+    margin-bottom: 31px;
+}
+
+.r3 .match { 
+    margin-top: 87px;
+    margin-bottom: 87px;
+}
+
+.r4 .match {    
+    margin-top: 199px;
+    margin-bottom: 199px;
+}
+
+.r5 .match {    
+    margin-top: 41px;
+    margin-bottom: 41px;
+}
+
+.r6 .match {    
+    margin-top: 41px;
+    margin-bottom: 41px;
+}
+
+.r7 .match {    
+    margin-top: 41px;
+    margin-bottom: 41px;
+} */
+
+.match {
+    background-color: #252525;
+    /* background-color: red; */
+    padding: 0.15vw 0.4vw;
+    border-radius: 0.5vw;
+    width: 12.5vw;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    /* border-left: 4px solid transparent; */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    height: 2.5vw;
+    /* gap: 1vw; */
+    /* width: 85%; */
+    /* height: 50px; */
+}
+
+.match-ins {
+    width: 70%;
+    /* background-color: blue; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.match-score {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.match .draw-player {
+    display: flex;
+    font-size: 12px;
+    /* background-color: #1e1e1e; */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.match .draw-score {
+    display: flex;
+    font-size: 10px;
+    font-family: Geist Mono;
+}
+
+.match .winner {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.score {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 4px;
+    background-color: red;
+}
+
+/* Optional: Connectors (static visual for now) */
+/* .bracket::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.draw-section {
+    margin-top: 10vh;
+    padding: 20px;
+    background-color: #1e1e1e;
+    width: 80vw;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 6px;
+    color: white;
+}
+
+.round {
+    margin-bottom: 30px;
+}
+
+.round h3 {
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+.match {
+    margin-bottom: 15px;
+    background-color: #252525;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.match p {
+    margin: 5px 0;
+}
+
+.winner {
+    color: var(--accent-color);
+} */
+
+/* .bracket :nth-child(2){
+    background-color: red;
+} */

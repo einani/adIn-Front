@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ATP Rankings</title>
+    <link rel="stylesheet" href="styleTournament.css"/>
+    <link rel="stylesheet" href="styleRankings.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+
+</head>
+<body> 
+    <div class="scroll-container">
+        <div class="frame-edge frame-top"></div>
+        <div class="frame-edge frame-bottom"></div>
+        <div class="frame-edge frame-left"></div>
+        <div class="frame-edge frame-right"></div>
+
+        <div class="content">
+            <div class = "navbar2">
+                <div id="sicon" class="pop">
+                    <i class="fas fa-search"></i>
+                </div>
+                <ul id="colorBox" class="nav-items">
+                    <li><a onclick="location.href='index.html'" class="nav-link tab">HOME</a></li>
+                    <li><a onclick="location.href='zPlayers.html'" class="nav-link tab">PLAYERS</a></li>
+                    <li><a onclick="location.href='zRankings.html'" class="nav-link tab">RANKINGS</a></li>
+                    <li><a onclick="location.href='tournaments.html'" class="nav-link tab">TOURNAMENTS</a></li>
+                    <li><a onclick="location.href='leaderboards.html'" class="nav-link tab">LEADERBOARDS</a></li>
+                    <li><a onclick="location.href='blog.html'" class="nav-link tab">BLOG</a></li>
+                    <li><a class="nav-link search">
+                        <i class="fas fa-search"></i>
+                    </a></li>
+                    <div class="search-container">
+                        <input id="search-input" type="text" placeholder="Search..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search...">
+                        <ul id="search-suggestions"></ul>
+                    </div>
+                </ul>
+                <div id="cicon" class="pop close">
+                    <i class="fas fa-x"></i>
+                </div>
+            </div>
+
+            <div class="top-text">
+                <div class="liveRankings">
+                    <h2>ATP Rankings</h2>
+                    <div class="rank-viewport">
+                        <div class="rank-track">
+                            <section class="player-section">
+                                <div class="ranking-grid">
+                                    <div class="r-title">
+                                        <div class="player-card ranking-col-title">
+                                            <div class="rank-Label seli" data-key="rank">#</div>
+                                            <div class="details-Col rankSec">
+                                                <div class="ch seli" data-key="ch">CH</div>
+                                                <div class="change-label seli" data-key="change">+/-</div>
+                                            </div>
+                                            <div class="playerInfo">
+                                                <div class="infoCol">
+                                                    <div class="name-Col seli" data-key="name">Player</div>
+                                                    <div class="ageCol seli" data-key="age">Age</div>
+                                                    <div class="natCol seli" data-key="nat">Nat</div>
+                                                </div>
+                                                <div class="r-data">
+                                                    <div class="details-Col pointSec">
+                                                        <div class="r-point seli" data-key="points">Points</div>
+                                                        <div class="r-tourn seli" data-key="current">Live</div>
+                                                        <!-- <div class="r-next seli" data-key="next">Next</div> -->
+                                                        <div class="r-max seli" data-key="max">Max</div>
+                                                    </div>
+                                                    <div class="details-Col xtraSec">
+                                                        <div class="r-point seli" data-key="tournament">Played</div>
+                                                        <!-- <div class="r-point seli" data-key="drop">Dropping</div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="expWrapper">
+                                                <span class="expandIcon"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="r-ply">
+
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="rankings.js"></script>
+    <script>
+        function getSortValue(card, key) {
+            switch (key) {
+            case 'rank':
+                return parseInt(card.querySelector('.rankLabel')?.textContent.trim() || 0);
+            case 'ch':
+                return parseInt(card.querySelector('.ch')?.textContent.trim() || 0);
+            case 'change':
+                return parseInt(card.querySelector('.change-label')?.textContent.trim() || 0);
+            case 'name':
+                return card.querySelector('.nameCol')?.textContent.trim() || '';
+            case 'age':
+                return parseFloat(card.querySelector('.ageCol')?.textContent.trim() || 0);
+            case 'nat':
+                return card.querySelector('.natCol')?.textContent.trim() || '';
+            case 'points':
+                return parseFloat(card.querySelector('.r-point')?.textContent.trim() || 0);
+            case 'current':
+                return card.querySelector('.r-tourn')?.textContent.trim() || '';
+            case 'next':
+                return parseFloat(card.querySelector('.r-next')?.textContent.trim() || 0);
+            case 'max':
+                return parseFloat(card.querySelector('.r-max')?.textContent.trim() || 0);
+            case 'tournament':
+                return parseFloat(card.querySelector('.r-count')?.textContent.trim() || 0);
+            // case 'drop':
+            //     return parseFloat(card.querySelector('.r-drop')?.textContent.trim() || 0);
+            // Add more cases as needed for other keys
+            default:
+                return '';
+            }
+        }
+
+        let currentSortKey = null;
+        let ascending = true;
+
+        document.querySelectorAll('[data-key]').forEach(header => {
+            header.addEventListener('click', () => {
+            const key = header.dataset.key;
+            if (currentSortKey === key) {
+                ascending = !ascending; // toggle
+            } else {
+                currentSortKey = key;
+                ascending = true;
+            }
+            sortPlayers(key, ascending);
+            });
+        });
+
+        function sortPlayers(key, asc = true) {
+            const container = document.querySelector('.r-ply');
+            // .nextElementSibling; // assuming this contains all players
+            const playerDivs = Array.from(container.children);
+
+            playerDivs.sort((a, b) => {
+            const aCard = a.querySelector('.player-card');
+            const bCard = b.querySelector('.player-card');
+
+            if (!aCard || !bCard) return 0;
+
+            const aVal = getSortValue(aCard, key);
+            const bVal = getSortValue(bCard, key);
+
+            if (typeof aVal === 'number' && typeof bVal === 'number') {
+                return asc ? aVal - bVal : bVal - aVal;
+            } else {
+                return asc
+                ? String(aVal).localeCompare(String(bVal))
+                : String(bVal).localeCompare(String(aVal));
+            }
+            });
+
+            // Re-append in sorted order
+            playerDivs.forEach(div => container.appendChild(div));
+        }
+
+    </script>
+</body>
+</html>

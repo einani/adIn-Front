@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Miami Open - Tournament Page</title>
+    <link rel="stylesheet" href="styleTournament.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href="zTournament.css"/>
+</head>
+<body>
+    <div class="scroll-container">
+        <div class="frame-edge frame-top"></div>
+        <div class="frame-edge frame-bottom"></div>
+        <div class="frame-edge frame-left"></div>
+        <div class="frame-edge frame-right"></div>
+
+        <div class="content">
+            <div class="navbar2">
+                <div id="sicon" class="pop"><i class="fas fa-search"></i></div>
+                    <ul id="colorBox" class="nav-items">
+                        <li><a onclick="location.href='index.html'" class="nav-link tab">HOME</a></li>
+                        <li><a onclick="location.href='zPlayers.html'" class="nav-link tab">PLAYERS</a></li>
+                        <li><a onclick="location.href='zRankings.html'" class="nav-link tab">RANKINGS</a></li>
+                        <li><a onclick="location.href='tournaments.html'" class="nav-link tab">TOURNAMENTS</a></li>
+                        <li><a onclick="location.href='leaderboards.html'" class="nav-link tab">LEADERBOARDS</a></li>
+                        <li><a onclick="location.href='blog.html'" class="nav-link tab">BLOG</a></li>
+                        <li><a class="nav-link search"><i class="fas fa-search"></i></a></li>
+                        <div class="search-container">
+                            <input id="search-input" type="text" placeholder="Search..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search...">
+                            <ul id="search-suggestions"></ul>
+                        </div>
+                    </ul>
+                <div id="cicon" class="pop close"><i class="fas fa-x"></i></div>
+            </div>
+
+            <div class="top-text"> 
+                <div class="text-viewport">
+                    <div class="text-track">     
+                        <section id="featured-tournament" class="featured-section">
+                            <div class="featured-info">
+                                <h2 class="featured-title">TOURNAMENT SPOTLIGHT</h2>
+                                <div class="featured-details">
+                                    
+                                </div>
+                            </div>
+                            <div class="featured-map">
+
+                            </div>
+                        </section>
+                        <section class="draw-tree">
+                            <div class="bracket-controls">
+                                <div id="prevBtn">
+                                    <svg data-testid="geist-icon" height="2vw" stroke-linejoin="round" style="color:currentColor" viewBox="0 0 16 16" width="2vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.14647 7.2929C2.75595 7.68343 2.75595 8.31659 3.14647 8.70712L6.96969 12.5303L7.50002 13.0607L8.56068 12L8.03035 11.4697L4.56068 8.00001L8.03035 4.53034L8.56068 4.00001L7.50002 2.93935L6.96969 3.46968L3.14647 7.2929ZM8.14647 7.2929C7.75595 7.68343 7.75595 8.31659 8.14647 8.70712L11.9697 12.5303L12.5 13.0607L13.5607 12L13.0304 11.4697L9.56068 8.00001L13.0304 4.53034L13.5607 4.00001L12.5 2.93935L11.9697 3.46968L8.14647 7.2929Z" fill="currentColor"></path></svg>
+                                </div>
+                                <h2>Singles Draw</h2>
+                                <div id="nextBtn">
+                                    <svg data-testid="geist-icon" height="2vw" stroke-linejoin="round" style="color:currentColor" viewBox="0 0 16 16" width="2vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.8536 8.7071C13.2441 8.31657 13.2441 7.68341 12.8536 7.29288L9.03034 3.46966L8.50001 2.93933L7.43935 3.99999L7.96968 4.53032L11.4393 7.99999L7.96968 11.4697L7.43935 12L8.50001 13.0607L9.03034 12.5303L12.8536 8.7071ZM7.85356 8.7071C8.24408 8.31657 8.24408 7.68341 7.85356 7.29288L4.03034 3.46966L3.50001 2.93933L2.43935 3.99999L2.96968 4.53032L6.43935 7.99999L2.96968 11.4697L2.43935 12L3.50001 13.0607L4.03034 12.5303L7.85356 8.7071Z" fill="currentColor"></path></svg>
+                                </div>
+                            </div>
+
+                            <div class="bracket-viewport">
+                                <div class="b-wrapper">
+                                    <div class="bracket b-head bh1">
+                                    </div>
+
+                                    <div class="b-pls">
+                                        <div class="b-caru">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="draw-map">
+                                </div>
+                            </div>
+                        </section>
+                        <section id="featured-tournament" class="featured-section">
+                            <div class="ldrb">
+                                <div class="featured-titi">
+                                    <h2 class="featured-title">STATISTICS</h2>
+                                </div>
+                                <div class="ldrb-cls">
+                                    <div class="ldrb-cls-tit">
+                                        <div class="ldrb-cls-full">
+                                            <div class="table-container2">
+                                                <div class="table-name2">
+                                                    <h3></h3>
+                                                </div>
+                                                <div class="szn-mat">
+                                                    <table class="season-matches">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Name</th>
+                                                                <th>Matches</th>
+                                                                <th>Aces</th>
+                                                                <th>DFs</th>
+                                                                <th>BPSvd</th>
+                                                                <th>BPCnv</th>
+                                                                <th>Tot P</th>
+                                                                <th>Srv P</th>
+                                                                <th>1stIn%</th>
+                                                                <th>Ace%</th>
+                                                                <th>DF%</th>
+                                                                <th>Sets</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="all-stasta">
+                                                            
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="featured-tournament" class="featured-section">
+                            <div class="ldrb">
+                                <div class="featured-titi">
+                                    <h2 class="featured-title">MATCHES</h2>
+                                </div>
+                                <div class="ldrb-cls">
+                                    <div class="ldrb-cls-tit">
+                                        <div class="ldrb-cls-full">
+                                            <div class="table-container2">
+                                                <div class="table-name">
+                                                    <h3></h3>
+                                                </div>
+                                                <div class="szn-mat">
+                                                    <table class="season-matches">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Round</th>
+                                                                <th>Winner</th>
+                                                                <th>Loser</th>
+                                                                <th>Score</th>
+                                                                <th>Time</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="all-matmat">
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div id="side-menu" class="side-menu fixed" data-expanded="false">
+                    <ul class="side-icons">
+                        <div class="side-selectors">
+                            <li data-index="0" class="tabs-button">
+                                <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.5253 10.2634L8 13.8578L4.47471 10.2634C2.50843 8.25857 2.50843 4.99627 4.47471 2.99144C6.42507 1.00285 9.57493 1.00285 11.5253 2.99144C13.4916 4.99627 13.4916 8.25857 11.5253 10.2634ZM12.5962 11.3137L9.05051 14.9289L8 16L6.94949 14.9289L3.40381 11.3137C0.865397 8.72554 0.865399 4.52929 3.40381 1.94113C5.94222 -0.647042 10.0578 -0.647042 12.5962 1.94113C15.1346 4.52929 15.1346 8.72554 12.5962 11.3137ZM9 6.5C9 7.05228 8.55228 7.5 8 7.5C7.44772 7.5 7 7.05228 7 6.5C7 5.94772 7.44772 5.5 8 5.5C8.55228 5.5 9 5.94772 9 6.5ZM8 9C9.38071 9 10.5 7.88071 10.5 6.5C10.5 5.11929 9.38071 4 8 4C6.61929 4 5.5 5.11929 5.5 6.5C5.5 7.88071 6.61929 9 8 9Z" fill="currentColor"></path></svg>
+                                <span class="label">Overview</span> 
+                            </li>
+                            <li data-index="1" class="tabs-button">
+                                <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.75 3.5H0V5H0.75H4.36513C4.63811 5 4.88953 5.14832 5.02157 5.38724L9.41557 13.3383C9.81168 14.0551 10.5659 14.5 11.3849 14.5H15.25H16V13H15.25H11.3849C11.1119 13 10.8605 12.8517 10.7284 12.6128L6.33443 4.66171C5.93832 3.94495 5.18406 3.5 4.36513 3.5H0.75ZM11.75 3.5H11V5H11.75H15.25H16V3.5H15.25H11.75Z" fill="currentColor"></path></svg>
+                                <span class="label">Draw</span>
+                            </li>
+                            <li data-index="2" class="tabs-button">
+                                <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 1V1.75V14.25V15H12.5V14.25V1.75V1H14ZM8.75 6V6.75V14.25V15H7.25V14.25V6.75V6H8.75ZM3.5 4.75V4H2V4.75V14.25V15H3.5V14.25V4.75Z" fill="currentColor"></path></svg>                            
+                                <span class="label">Statistics</span>
+                            </li>
+                            <li data-index="3" class="tabs-button">
+                                <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.35066 2.06247C5.96369 1.78847 6.62701 1.60666 7.32351 1.53473L7.16943 0.0426636C6.31208 0.1312 5.49436 0.355227 4.73858 0.693033L5.35066 2.06247ZM8.67651 1.53473C11.9481 1.87258 14.5 4.63876 14.5 8.00001C14.5 11.5899 11.5899 14.5 8.00001 14.5C4.63901 14.5 1.87298 11.9485 1.5348 8.67722L0.0427551 8.83147C0.459163 12.8594 3.86234 16 8.00001 16C12.4183 16 16 12.4183 16 8.00001C16 3.86204 12.8589 0.458666 8.83059 0.0426636L8.67651 1.53473ZM2.73972 4.18084C3.14144 3.62861 3.62803 3.14195 4.18021 2.74018L3.29768 1.52727C2.61875 2.02128 2.02064 2.61945 1.52671 3.29845L2.73972 4.18084ZM1.5348 7.32279C1.60678 6.62656 1.78856 5.96348 2.06247 5.35066L0.693033 4.73858C0.355343 5.4941 0.131354 6.31152 0.0427551 7.16854L1.5348 7.32279ZM8.75001 4.75V4H7.25001V4.75V7.875C7.25001 8.18976 7.3982 8.48615 7.65001 8.675L9.55001 10.1L10.15 10.55L11.05 9.35L10.45 8.9L8.75001 7.625V4.75Z" fill="currentColor"></path></svg>
+                                <span class="label">Matches</span>
+                            </li>
+                            <li data-index="4" class="tabs-button">
+                                <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.75 0C2.50736 0 1.5 1.00736 1.5 2.25V13.744V13.75H1.50001C1.50323 14.9899 2.50935 15.994 3.75 15.994H13H14.5V14.494V13.7296V12.994V11.494V0.75V0H13.75H3.75ZM13 11.494V1.5H3.75C3.33579 1.5 3 1.83579 3 2.25V11.622C3.23458 11.5391 3.48702 11.494 3.75 11.494H13ZM3 13.744C3 14.1582 3.33579 14.494 3.75 14.494H13V13.7296V12.994H3.75C3.33579 12.994 3 13.3298 3 13.744Z" fill="currentColor"></path></svg>
+                                <span class="label">Archive</span>
+                            </li>
+                        </div>
+                        <div class="side-help">
+                            <div class="for-exp">
+                                <div class="fin-wrapper">
+                                    <li id="open-side-menu" class="tab-side">
+                                        <!-- <svg class="open-icon" data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 1vw 1vw" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.8536 8.7071C13.2441 8.31657 13.2441 7.68341 12.8536 7.29288L9.03034 3.46966L8.50001 2.93933L7.43935 3.99999L7.96968 4.53032L11.4393 7.99999L7.96968 11.4697L7.43935 12L8.50001 13.0607L9.03034 12.5303L12.8536 8.7071ZM7.85356 8.7071C8.24408 8.31657 8.24408 7.68341 7.85356 7.29288L4.03034 3.46966L3.50001 2.93933L2.43935 3.99999L2.96968 4.53032L6.43935 7.99999L2.96968 11.4697L2.43935 12L3.50001 13.0607L4.03034 12.5303L7.85356 8.7071Z" fill="currentColor"></path></svg>                             -->
+                                        <svg class="open-icon" data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.14647 7.2929C2.75595 7.68343 2.75595 8.31659 3.14647 8.70712L6.96969 12.5303L7.50002 13.0607L8.56068 12L8.03035 11.4697L4.56068 8.00001L8.03035 4.53034L8.56068 4.00001L7.50002 2.93935L6.96969 3.46968L3.14647 7.2929ZM8.14647 7.2929C7.75595 7.68343 7.75595 8.31659 8.14647 8.70712L11.9697 12.5303L12.5 13.0607L13.5607 12L13.0304 11.4697L9.56068 8.00001L13.0304 4.53034L13.5607 4.00001L12.5 2.93935L11.9697 3.46968L8.14647 7.2929Z" fill="currentColor"></path></svg>
+                                        <svg class="close-icon away" data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.8536 8.7071C13.2441 8.31657 13.2441 7.68341 12.8536 7.29288L9.03034 3.46966L8.50001 2.93933L7.43935 3.99999L7.96968 4.53032L11.4393 7.99999L7.96968 11.4697L7.43935 12L8.50001 13.0607L9.03034 12.5303L12.8536 8.7071ZM7.85356 8.7071C8.24408 8.31657 8.24408 7.68341 7.85356 7.29288L4.03034 3.46966L3.50001 2.93933L2.43935 3.99999L2.96968 4.53032L6.43935 7.99999L2.96968 11.4697L2.43935 12L3.50001 13.0607L4.03034 12.5303L7.85356 8.7071Z" fill="currentColor"></path></svg>                            
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="zTournament.js"></script>
+</body>
+</html>

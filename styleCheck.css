@@ -1,0 +1,366 @@
+/* 
+clay-court by Boris Misevic @borisview (unsplash)
+grass-court by @helloimnik (unsplash)
+hard-court by Parsoa Khorsand @parsoakhorsand (unsplash)
+stands by Reed Mok @reeeed (unsplash)
+*/
+
+/* !!!!!!!!!!!!!!! Font size needs to adjust to screen size !!!!!!!!!!!!!!! */
+
+
+@font-face {
+    /* font-family: pramukhRounded;
+    src: url('/fonts/PramukhRounded-Variable.ttf'); */
+    font-family: satoshi;
+    src: url('/fonts/Satoshi-Variable.ttf');
+}
+
+* {
+    font-family: satoshi;
+    font-weight: 500;
+}
+
+body {
+    /* position: relative; */
+    background-image: url('./assets/clay-court.avif');
+    background-size: cover; /*Ensures the image covers the entire viewport*/
+    /* background-position: center; Centers the image */
+    background-repeat: no-repeat; /*Prevents tiling*/
+    /* display: flex; */
+    display: block;
+    justify-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* Stops the scroll bar */
+    margin: 0;
+}
+
+
+/* ------------------------- NAVIGATION BAR SITUATION ------------------------- */
+.navbar {
+    background: linear-gradient(to top, rgba(0,0,0,0), rgba(0, 0, 0, 0.45) 50%); /* Gradient only affects the background */
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* !!!!!!!!!!!!!!! Experiment with less opacity in the dark navbar !!!!!!!!!!!!!!! */
+.nav-items {
+    background-color: rgba(22, 22, 22, 0.93);
+    height: 5vh;
+    width: 50vw;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-items a:hover {
+    cursor: pointer;
+}
+
+.nav-link.active {
+    /* background-color: yellow; */
+    background-color: rgb(255, 216, 107);
+    /* fbd86b */
+    color: rgb(0, 0, 0);
+}
+
+a {
+    background-color: rgba(22, 22, 22, 0.93);
+    /* background-color: yellow; */
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+    text-decoration: none;
+    text-decoration-color: black;
+    padding: 1.25vh 1vw;
+    /* position: relative; */
+    /* display: inline-block; */
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: 2vh;
+}
+
+a:hover {
+    color: rgb(0, 0, 0);
+    opacity: 1;
+    background-color: grey;
+    /* text-decoration: underline; */
+    /* text-underline-offset: 5px; */
+    /* text-decoration: ; */
+    /* text-decoration-color: rgb(255, 255, 255); */
+}
+
+.nav-items a {
+    margin: 0 0.67vw;
+}
+
+
+/* ------------------------- SEARCH BAR SITUATION ------------------------- */
+/* .search {
+    cursor: crosshair;
+} */
+
+.pop {
+    display: none;
+    background-color: rgba(22, 22, 22, 0.93);
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+    text-decoration: none;
+    text-decoration-color: black;
+    padding: 1vh 1vw;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    margin: 2vw;
+    cursor: pointer;
+}
+
+.pop:hover {
+    color: rgb(0, 0, 0);
+    opacity: 1;
+    background-color: grey;
+}
+
+.search-container {
+    display: none;
+    height: 5vh;
+    max-width: 50vw;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container input {
+    border: 1px solid rgba(22, 22, 22, 0.93);
+    width: 100%;
+    max-width: 50vw;
+    height: 4.5vh;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: rgba(22, 22, 22, 0.93);
+    color: white;
+    padding-left: 2vw;
+}
+
+
+/* This is the Search ICON */
+/* .search-container i { 
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: blue;
+    cursor: pointer;
+} */
+
+
+/* SEARCH BAR TOGGLE */
+.nav-link.hidden {
+    display: none;
+}
+
+
+/* ------------------------- ENTRY TEXT SITUATION ------------------------- */
+/* Navbar takes up 10vh */
+.entry-container {
+    justify-content: center;
+}
+
+.inside-img {
+    justify-content: center;
+}
+
+.entry-text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 160px;
+    color: white;
+    opacity: 1;
+    /* letter-spacing: -0.8vw; */
+}
+
+
+/* ------------------------- TENNIS COURT DRAWING SITUATION ------------------------- */
+.canvas-container {
+    /* margin-left: -1000px; */
+    /* display: block; */
+    display: flex;
+    width: 80vh;
+    height: 80vh;
+    perspective: 800px; 
+    /* border: 2px solid aliceblue; */
+    margin-top: -3vh;
+    /* Depth effect */
+    /* background-color: black; */
+    align-items: center;
+    justify-content: center;
+    /* justify-items: center; */
+}
+
+/* Apply 3D rotation */
+.canvas-3d {
+    position: absolute;
+    /* width: 300px;
+    height: 300px; */
+    /* width: 80vh;
+    height: 80vh; */
+    transform-origin: center;
+    transform: rotateX(40deg); 
+    /* Tilt forward */
+
+    /* background-color: white; */
+    /* transform-origin: center;
+    transform: rotateX(40deg); */
+    transform-style: preserve-3d;
+    /* perspective: 800px; */
+    border: 1px solid black;
+    /* display: block; */
+    margin: 40px auto;
+}
+
+.topCourt {
+    z-index: 20;
+}
+
+.bottomCourt {
+    z-index: 10;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .entry-container {
+    justify-content: center;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    opacity: 0.9;
+    overflow: hidden;
+}
+
+.inside-img {
+    justify-content: center;
+    align-content: center;
+    background-image: url(./assets/stands.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    width: 66%;
+    height: 72.5%;
+    margin-top: 6.6vh;
+}
+
+.entry-text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 160px;
+    color: white;
+    opacity: 1;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .circle {
+    height: 66vw;
+    width: 66vw;
+    opacity: 0.2;
+    border-radius: 50%;
+
+    filter: invert(1);
+
+    background-image: url('./assets/clay-court.avif');
+    background-size: cover;
+    background-position: center;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

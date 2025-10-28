@@ -1,0 +1,621 @@
+<!-- 
+
+1. Move the first name and right name to separate blocks
+2. Put the bio in block 2 so it matches the line of the last name
+3. Put selectable squares in my tennis-court
+4. Create side menu and the top menu animation
+5. Fix scraping for shot data and attempt to sync with page
+6. If everything works, start scraping other stats
+
+--> 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylePlayer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class = "scroll-container">
+        <div class="frame-edge frame-top"></div>
+        <div class="frame-edge frame-bottom"></div>
+        <div class="frame-edge frame-left"></div>
+        <div class="frame-edge frame-right"></div>
+
+        <div class = "content">
+            <div class = "navbar2">
+                <div id="sicon" class="pop">
+                    <i class="fas fa-search"></i>
+                </div>
+                <ul id="colorBox" class="nav-items">
+                    <li><a onclick="location.href='index.html'" class="nav-link tab">HOME</a></li>
+                    <li><a onclick="location.href='zPlayers.html'" class="nav-link tab">PLAYERS</a></li>
+                    <li><a onclick="location.href='zRankings.html'" class="nav-link tab">RANKINGS</a></li>
+                    <li><a onclick="location.href='tournaments.html'" class="nav-link tab">TOURNAMENTS</a></li>
+                    <li><a onclick="location.href='leaderboards.html'" class="nav-link tab">LEADERBOARDS</a></li>
+                    <li><a onclick="location.href='blog.html'" class="nav-link tab">TEMP</a></li>
+                    <li><a class="nav-link search">
+                        <i class="fas fa-search"></i>
+                    </a></li>
+                    <div class="search-container">
+                        <input id="search-input" type="text" placeholder="Search..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search...">
+                        <ul id="search-suggestions"></ul>
+                    </div>
+                </ul>
+                <div id="cicon" class="pop close">
+                    <i class="fas fa-x"></i>
+                </div>
+            </div>
+            <div class="top-text">
+                <div id="togDis" class="left-side-player">
+                    <div class="player-photo"> 
+                        <svg id="pic-credit" data-testid="geist-icon" height="16" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 14.5C11.5899 14.5 14.5 11.5899 14.5 8C14.5 4.41015 11.5899 1.5 8 1.5C4.41015 1.5 1.5 4.41015 1.5 8C1.5 11.5899 4.41015 14.5 8 14.5ZM8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM6.25 7H7H7.74999C8.30227 7 8.74999 7.44772 8.74999 8V11.5V12.25H7.24999V11.5V8.5H7H6.25V7ZM8 6C8.55229 6 9 5.55228 9 5C9 4.44772 8.55229 4 8 4C7.44772 4 7 4.44772 7 5C7 5.55228 7.44772 6 8 6Z" fill="currentColor"></path></svg>
+                        <div class="pic-hover-info">
+                            <h6>Credit: wikimedia.commons/benShelton</h6>
+                        </div>
+                    </div>
+                </div>
+                <div id="togtog" class="collapse-arrow">
+                    <svg id="close-pic" data-testid="geist-icon" height="16" stroke-linejoin="round" viewBox="0 0 16 16" width="16" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 14.0607L9.96966 13.5303L5.14644 8.7071C4.75592 8.31658 4.75592 7.68341 5.14644 7.29289L9.96966 2.46966L10.5 1.93933L11.5607 2.99999L11.0303 3.53032L6.56065 7.99999L11.0303 12.4697L11.5607 13L10.5 14.0607Z" fill="currentColor"></path></svg>
+                    <svg id="open-pic" data-testid="geist-icon" height="16" stroke-linejoin="round" viewBox="0 0 16 16" width="16" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.50001 1.93933L6.03034 2.46966L10.8536 7.29288C11.2441 7.68341 11.2441 8.31657 10.8536 8.7071L6.03034 13.5303L5.50001 14.0607L4.43935 13L4.96968 12.4697L9.43935 7.99999L4.96968 3.53032L4.43935 2.99999L5.50001 1.93933Z" fill="currentColor"></path></svg>         
+                </div>
+                <div class="player-section">
+                    <div class ="name">
+                    </div>
+                    <div class="right-text">
+                        <div class="section-text">
+                            <div data-tab="Overview" id="ovw" class="text-col2">
+                                <div>
+                                    <h5>Overview Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui voluptas nobis delectus quod minima illum 
+                                        corporis ducimus maiores a consectetur architecto harum tenetur explicabo nostrum perspiciatis sint 
+                                        reprehenderit, iste dolore et illo suscipit quo cupiditate natus mollitia? Ea necessitatibus ratione 
+                                        repudiandae expedita? Eaque, unde porro provident quod laborum perspiciatis ex!
+                                    </h5>
+                                    <h5>    
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aliquam nam eos dolorem accusamus modi
+                                        doloremque quod excepturi! Aspernatur quae voluptas quibusdam similique optio laudantium blanditiis, culpa nisi
+                                        saepe nobis deleniti in quisquam. Ratione nostrum commodi, quia consequuntur dolorem expedita natus, quasi nemo
+                                        eos amet praesentium, corporis tempora deserunt atque modi rerum! Aut beatae veniam mollitia obcaecati corrupti
+                                        natus perferendis quae animi. Velit consectetur sit praesentium ea. Itaque nihil accusamus eligendi architecto
+                                        distinctio voluptates explicabo ex debitis odio, nam nostrum possimus voluptate earum est corporis aut. Quia 
+                                        eveniet officiis, nobis optio qui maiores aperiam expedita vel asperiores hic quisquam eos nihil magnam alias 
+                                        quo porro harum, laboriosam deleniti iusto fuga inventore cum quis quam laborum? Repellat assumenda incidunt 
+                                        voluptatum ipsa illo neque, voluptates excepturi nulla ex molestiae iure reprehenderit quisquam id autem 
+                                        consequatur labore quidem nostrum quasi vitae modi explicabo molestias! Repellat, earum molestias voluptates 
+                                        asperiores vitae consectetur aspernatur cumque labore cum qui rem eaque nobis quibusdam laborum omnis, quae, 
+                                        amet magni blanditiis dolorum saepe impedit inventore illum consequuntur aperiam. Repellendus saepe dolores, 
+                                        maxime delectus laboriosam accusantium quia nihil inventore, libero recusandae harum eius iste repellat error 
+                                        neque. Ratione recusandae est reprehenderit saepe pariatur autem iste ullam cum qui natus.
+                                    </h5>
+                                    <!-- <div class="ppinfo">
+                                    </div> -->
+                                    <div class="socials">
+                                        <svg data-testid="geist-icon" height="16" stroke-linejoin="round" viewBox="0 0 16 16" width="16" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.00319 15.9377C12.948 15.4442 16 12.0785 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 11.8172 2.67341 15.0099 6.25 15.808V10.4303H4.5V8H6.25V6.93969C6.25 4.22193 7.28461 2.96364 9.95128 2.96364C10.4559 2.96364 11.3277 3.06264 11.6854 3.16164V5.37163C11.497 5.35247 11.168 5.34289 10.7625 5.34289C9.45307 5.34289 9 5.8379 9 7.12812V8H11.5577L11.1106 10.4303H9.00319V15.9377Z" fill="#0866FF"></path></svg>
+                                        <svg data-testid="geist-icon" height="16" stroke-linejoin="round" viewBox="0 0 16 16" width="16" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 0.5H5.75L9.48421 5.71053L14 0.5H16L10.3895 6.97368L16.5 15.5H11.25L7.51579 10.2895L3 15.5H1L6.61053 9.02632L0.5 0.5ZM12.0204 14L3.42043 2H4.97957L13.5796 14H12.0204Z" fill="currentColor"></path></svg>
+                                        <svg data-testid="geist-icon" height="16" stroke-linejoin="round" viewBox="0 0 16 16" width="16" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.268 14.0934C11.9051 13.4838 13.2303 12.2333 13.9384 10.6469C13.1192 10.7941 12.2138 10.9111 11.2469 10.9925C11.0336 12.2005 10.695 13.2621 10.268 14.0934ZM8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM8.48347 14.4823C8.32384 14.494 8.16262 14.5 8 14.5C7.83738 14.5 7.67616 14.494 7.51654 14.4823C7.5132 14.4791 7.50984 14.4759 7.50647 14.4726C7.2415 14.2165 6.94578 13.7854 6.67032 13.1558C6.41594 12.5744 6.19979 11.8714 6.04101 11.0778C6.67605 11.1088 7.33104 11.125 8 11.125C8.66896 11.125 9.32395 11.1088 9.95899 11.0778C9.80021 11.8714 9.58406 12.5744 9.32968 13.1558C9.05422 13.7854 8.7585 14.2165 8.49353 14.4726C8.49016 14.4759 8.4868 14.4791 8.48347 14.4823ZM11.4187 9.72246C12.5137 9.62096 13.5116 9.47245 14.3724 9.28806C14.4561 8.87172 14.5 8.44099 14.5 8C14.5 7.55901 14.4561 7.12828 14.3724 6.71194C13.5116 6.52755 12.5137 6.37904 11.4187 6.27753C11.4719 6.83232 11.5 7.40867 11.5 8C11.5 8.59133 11.4719 9.16768 11.4187 9.72246ZM10.1525 6.18401C10.2157 6.75982 10.25 7.36805 10.25 8C10.25 8.63195 10.2157 9.24018 10.1525 9.81598C9.46123 9.85455 8.7409 9.875 8 9.875C7.25909 9.875 6.53877 9.85455 5.84749 9.81598C5.7843 9.24018 5.75 8.63195 5.75 8C5.75 7.36805 5.7843 6.75982 5.84749 6.18401C6.53877 6.14545 7.25909 6.125 8 6.125C8.74091 6.125 9.46123 6.14545 10.1525 6.18401ZM11.2469 5.00748C12.2138 5.08891 13.1191 5.20593 13.9384 5.35306C13.2303 3.7667 11.9051 2.51622 10.268 1.90662C10.695 2.73788 11.0336 3.79953 11.2469 5.00748ZM8.48347 1.51771C8.4868 1.52089 8.49016 1.52411 8.49353 1.52737C8.7585 1.78353 9.05422 2.21456 9.32968 2.84417C9.58406 3.42562 9.80021 4.12856 9.95899 4.92219C9.32395 4.89118 8.66896 4.875 8 4.875C7.33104 4.875 6.67605 4.89118 6.04101 4.92219C6.19978 4.12856 6.41594 3.42562 6.67032 2.84417C6.94578 2.21456 7.2415 1.78353 7.50647 1.52737C7.50984 1.52411 7.51319 1.52089 7.51653 1.51771C7.67615 1.50597 7.83738 1.5 8 1.5C8.16262 1.5 8.32384 1.50597 8.48347 1.51771ZM5.73202 1.90663C4.0949 2.51622 2.76975 3.7667 2.06159 5.35306C2.88085 5.20593 3.78617 5.08891 4.75309 5.00748C4.96639 3.79953 5.30497 2.73788 5.73202 1.90663ZM4.58133 6.27753C3.48633 6.37904 2.48837 6.52755 1.62761 6.71194C1.54392 7.12828 1.5 7.55901 1.5 8C1.5 8.44099 1.54392 8.87172 1.62761 9.28806C2.48837 9.47245 3.48633 9.62096 4.58133 9.72246C4.52807 9.16768 4.5 8.59133 4.5 8C4.5 7.40867 4.52807 6.83232 4.58133 6.27753ZM4.75309 10.9925C3.78617 10.9111 2.88085 10.7941 2.06159 10.6469C2.76975 12.2333 4.0949 13.4838 5.73202 14.0934C5.30497 13.2621 4.96639 12.2005 4.75309 10.9925Z" fill="currentColor"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="overview-bottom">
+                                </div>
+                            </div>
+                            <div data-tab="Stats" id="sts" class="text-col2">
+                                <div class="table-container">
+                                    <div class="table-controls">
+                                        <div class="table-toggle-button" id="seasonToggle">
+                                            <span class="table-active" data-type="season">Season</span>
+                                            <span data-type="career">Career</span>
+                                        </div>
+                                        <select id="surfaceSelect">
+                                            <option value="all">2025</option>
+                                            <option value="clay">2024</option>
+                                            <option value="grass">2023</option>
+                                            <option value="hard">2022</option>
+                                        </select>
+                                        <!-- <select id="surfaceSelect">
+                                            <option value="all">All Surfaces</option>
+                                            <option value="clay">Clay</option>
+                                            <option value="grass">Grass</option>
+                                            <option value="hard">Hard</option>
+                                        </select> -->
+                                    </div>
+
+                                    <table id="statsMain">
+                                    </table>
+                                </div>
+                            </div>
+                            <div data-tab="Rankings" id="rnk" class="text-col2">
+                                <div class="table-container2">
+                                    <div class="table-name">
+                                        <h3>ATP Race Points</h3>
+                                    </div>
+                                    <div class="szn-rnk">
+                                        <table class="season-ranks">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Event</th>
+                                                    <th>Round</th>
+                                                    <th>Points</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="all-rnkrnk">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-tab="Matches" id="mtc" class="text-col2">
+                                <div class="table-container2">
+                                    <div class="table-name">
+                                        <h3>ATP Tour Seasons</h3>
+                                        <svg id="ck-to-hm" data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.75V0H1.5V0.75V15.25V16H0V15.25V0.75ZM8.46967 3.21967L9 2.68934L10.0607 3.75L9.53033 4.28033L6.56066 7.25H15.25H16V8.75H15.25H6.56066L9.53033 11.7197L10.0607 12.25L9 13.3107L8.46967 12.7803L4.21967 8.53033C3.92678 8.23744 3.92678 7.76256 4.21967 7.46967L8.46967 3.21967Z" fill="currentColor"></path></svg>
+                                    </div>
+                                    <table class="season-history">
+                                        
+                                    </table>
+                                    <div class="szn-mat">
+                                        <table class="season-matches">
+                                            
+                                        </table>
+                                    </div>
+                                    <!-- <div class="table-name">
+                                        <h3>Challenger Tour Seasons</h3>
+                                    </div>
+                                    <table class="season-history">
+                                        <thead>
+                                            <tr>
+                                                <th>Year</th>
+                                                <th>M</th>
+                                                <th>Win</th>
+                                                <th>Loss</th>
+                                                <th>Win%</th>
+                                                <th>Set-W/L</th>
+                                                <th>Set%</th>
+                                                <th>Game-W/L</th>
+                                                <th>Game%</th>
+                                                <th>TB-W/L</th>
+                                                <th>TB%</th>
+                                                <th>Hold%</th>
+                                                <th>Break%</th>
+                                                <th>Best</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>R1C1</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td><td>R1C7</td><td>R1C8</td><td>R1C9</td><td>R1C10</td>
+                                                <td>R1C11</td><td>R1C12</td><td>R1C13</td><td>R1C14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>R1C1</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td><td>R1C7</td><td>R1C8</td><td>R1C9</td><td>R1C10</td>
+                                                <td>R1C11</td><td>R1C12</td><td>R1C13</td><td>R1C14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>R1C1</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td><td>R1C7</td><td>R1C8</td><td>R1C9</td><td>R1C10</td>
+                                                <td>R1C11</td><td>R1C12</td><td>R1C13</td><td>R1C14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>R1C1</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td><td>R1C7</td><td>R1C8</td><td>R1C9</td><td>R1C10</td>
+                                                <td>R1C11</td><td>R1C12</td><td>R1C13</td><td>R1C14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>R1C1</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td><td>R1C7</td><td>R1C8</td><td>R1C9</td><td>R1C10</td>
+                                                <td>R1C11</td><td>R1C12</td><td>R1C13</td><td>R1C14</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="table-name">
+                                        <h3>Titles/Finals</h3>
+                                    </div>
+                                    <table class="season-history">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Tournament</th>
+                                                <th>Type</th>
+                                                <th>Surface</th>
+                                                <th>Rank</th>
+                                                <th>Opp-Rank</th>
+                                                <th>VS</th>
+                                                <th>Score</th>
+                                                <th>Time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>R1C1</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td><td>R1C7</td><td>R1C8</td><td>R1C9</td>
+                                            </tr>
+                                            <tr>
+                                                <td>R1C1</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td><td>R1C7</td><td>R1C8</td><td>R1C9</td>
+                                            </tr>
+                                            <tr>
+                                                <td>R1C1</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td><td>R1C7</td><td>R1C8</td><td>R1C9</td>
+                                            </tr>
+                                            <tr>
+                                                <td>R1C1</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td><td>R1C7</td><td>R1C8</td><td>R1C9</td>
+                                            </tr>
+                                            <tr>
+                                                <td>R1C1</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td><td>R1C7</td><td>R1C8</td><td>R1C9</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="table-name">
+                                        <h3>Major History</h3>
+                                    </div>
+                                    <table class="season-history">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Australian Open</th>
+                                                <th>French Open</th>
+                                                <th>Wimbledon</th>
+                                                <th>US Open</th>
+                                                <th>Total-W/L</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2025</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2024</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2023</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2021</td><td>R1C2</td><td>R1C3</td><td>R1C4</td><td>R1C5</td><td>R1C6</td>
+                                            </tr>
+                                        </tbody>
+                                    </table> -->
+                                </div>
+                            </div>
+                            <div data-tab="Shot-Chart" id="shc" class="text-col2">
+                                <div id="shot-tables">
+                                    <div class="collapsible-table">
+                                        <button id="nmat" class="table-toggle"></button>
+                                    </div>
+
+                                    <div class="collapsible-table">
+                                        <button class="table-toggle tab-toggle">Shot Types ▼</button>
+                                        <table class="minimal-table">
+                                            <thead>
+                                                <tr><th>Type</th><th>Frequency</th></tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <!-- BACKHAND group -->
+                                                <tr class="group-header" data-group="backhand">
+                                                    <td>Backhand</td><td id="bh">45%</td>
+                                                </tr>
+
+                                                <tr class="group-item" data-group="backhand" data-subgroup="backhandStroke">
+                                                    <td>Backhand Stroke</td><td id="bh-st">10%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandStroke" data-parent="backhand">
+                                                    <td>Cross</td><td id="bh-st-cr">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandStroke" data-parent="backhand">
+                                                    <td>Inside Out</td><td id="bh-st-io">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandStroke" data-parent="backhand">
+                                                    <td>Middle</td><td id="bh-st-mi">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandStroke" data-parent="backhand">
+                                                    <td>Down the Line</td><td id="bh-st-dt">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandStroke" data-parent="backhand">
+                                                    <td>Inside In</td><td id="bh-st-ii">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandStroke" data-parent="backhand">
+                                                    <td>Shank</td><td id="bh-st-sh">3%</td>
+                                                </tr>
+
+                                                <tr class="group-item" data-group="backhand" data-subgroup="backhandSlice">
+                                                    <td>Backhand Slice</td><td id="bh-sl">10%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandSlice" data-parent="backhand">
+                                                    <td>Cross</td><td id="bh-sl-cr">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandSlice" data-parent="backhand">
+                                                    <td>Inside Out</td><td id="bh-sl-io">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandSlice" data-parent="backhand">
+                                                    <td>Middle</td><td id="bh-sl-mi">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandSlice" data-parent="backhand">
+                                                    <td>Down the Line</td><td id="bh-sl-dt">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandSlice" data-parent="backhand">
+                                                    <td>Inside In</td><td id="bh-sl-ii">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandSlice" data-parent="backhand">
+                                                    <td>Shank</td><td id="bh-sl-sh">3%</td>
+                                                </tr>
+
+                                                <tr class="group-item" data-group="backhand" data-subgroup="backhandDrop">
+                                                    <td>Backhand Drop</td><td id="bh-dr">10%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandDrop" data-parent="backhand">
+                                                    <td>Cross</td><td id="bh-dr-cr">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandDrop" data-parent="backhand">
+                                                    <td>Inside Out</td><td id="bh-dr-io">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandDrop" data-parent="backhand">
+                                                    <td>Middle</td><td id="bh-dr-mi">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandDrop" data-parent="backhand">
+                                                    <td>Down the Line</td><td id="bh-dr-dt">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandDrop" data-parent="backhand">
+                                                    <td>Inside In</td><td id="bh-dr-ii">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandDrop" data-parent="backhand">
+                                                    <td>Shank</td><td id="bh-dr-sh">3%</td>
+                                                </tr>
+                                                
+                                                <tr class="group-item" data-group="backhand" data-subgroup="backhandVolley">
+                                                    <td>Backhand Volley</td><td id="bh-vo">10%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandVolley" data-parent="backhand">
+                                                    <td>Cross</td><td id="bh-vo-cr">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandVolley" data-parent="backhand">
+                                                    <td>Inside Out</td><td id="bh-vo-io">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandVolley" data-parent="backhand">
+                                                    <td>Middle</td><td id="bh-vo-mi">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandVolley" data-parent="backhand">
+                                                    <td>Down the Line</td><td id="bh-vo-dt">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandVolley" data-parent="backhand">
+                                                    <td>Inside In</td><td id="bh-vo-ii">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="backhandVolley" data-parent="backhand">
+                                                    <td>Shank</td><td id="bh-vo-sh">3%</td>
+                                                </tr>
+
+                                                <!-- FOREHAND group -->
+                                                <tr class="group-header" data-group="forehand">
+                                                    <td>Forehand</td><td id="fh">45%</td>
+                                                </tr>
+
+                                                <tr class="group-item" data-group="forehand" data-subgroup="forehandStroke">
+                                                    <td>Forehand Stroke</td><td id="fh-st">10%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandStroke" data-parent="forehand">
+                                                    <td>Cross</td><td id="fh-st-cr">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandStroke" data-parent="forehand">
+                                                    <td>Inside Out</td><td id="fh-st-io">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandStroke" data-parent="forehand">
+                                                    <td>Middle</td><td id="fh-st-mi">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandStroke" data-parent="forehand">
+                                                    <td>Down the Line</td><td id="fh-st-dt">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandStroke" data-parent="forehand">
+                                                    <td>Inside In</td><td id="fh-st-ii">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandStroke" data-parent="forehand">
+                                                    <td>Shank</td><td id="fh-st-sh">3%</td>
+                                                </tr>
+
+                                                <tr class="group-item" data-group="forehand" data-subgroup="forehandSlice">
+                                                    <td>Forehand Slice</td><td id="fh-sl">10%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandSlice" data-parent="forehand">
+                                                    <td>Cross</td><td id="fh-sl-cr">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandSlice" data-parent="forehand">
+                                                    <td>Inside Out</td><td id="fh-sl-io">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandSlice" data-parent="forehand">
+                                                    <td>Middle</td><td id="fh-sl-mi">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandSlice" data-parent="forehand">
+                                                    <td>Down the Line</td><td id="fh-sl-dt">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandSlice" data-parent="forehand">
+                                                    <td>Inside In</td><td id="fh-sl-ii">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandSlice" data-parent="forehand">
+                                                    <td>Shank</td><td id="fh-sl-sh">3%</td>
+                                                </tr>
+
+                                                <tr class="group-item" data-group="forehand" data-subgroup="forehandDrop">
+                                                    <td>Forehand Drop</td><td id="fh-dr">10%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandDrop" data-parent="forehand">
+                                                    <td>Cross</td><td id="fh-dr-cr">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandDrop" data-parent="forehand">
+                                                    <td>Inside Out</td><td id="fh-dr-io">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandDrop" data-parent="forehand">
+                                                    <td>Middle</td><td id="fh-dr-mi">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandDrop" data-parent="forehand">
+                                                    <td>Down the Line</td><td id="fh-dr-dt">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandDrop" data-parent="forehand">
+                                                    <td>Inside In</td><td id="fh-dr-ii">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandDrop" data-parent="forehand">
+                                                    <td>Shank</td><td id="fh-dr-sh">3%</td>
+                                                </tr>
+                                                
+                                                <tr class="group-item" data-group="forehand" data-subgroup="forehandVolley">
+                                                    <td>Forehand Volley</td><td id="fh-vo">10%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandVolley" data-parent="forehand">
+                                                    <td>Cross</td><td id="fh-vo-cr">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandVolley" data-parent="forehand">
+                                                    <td>Inside Out</td><td id="fh-vo-io">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandVolley" data-parent="forehand">
+                                                    <td>Middle</td><td id="fh-vo-mi">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandVolley" data-parent="forehand">
+                                                    <td>Down the Line</td><td id="fh-vo-dt">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandVolley" data-parent="forehand">
+                                                    <td>Inside In</td><td id="fh-vo-ii">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="forehandVolley" data-parent="forehand">
+                                                    <td>Shank</td><td id="fh-vo-sh">3%</td>
+                                                </tr>
+
+                                                <!-- Other -->
+                                                <tr class="group-header" data-group="smash">
+                                                    <td>Smash</td><td id="sm">35%</td>
+                                                </tr>
+
+                                                <tr class="group-item" data-group="smash" data-subgroup="smashStroke">
+                                                    <td>Smash</td><td id="sm-st">10%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="smashStroke" data-parent="smash">
+                                                    <td>Cross</td><td id="sm-st-cr">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="smashStroke" data-parent="smash">
+                                                    <td>Inside Out</td><td id="sm-st-io">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="smashStroke" data-parent="smash">
+                                                    <td>Middle</td><td id="sm-st-mi">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="smashStroke" data-parent="smash">
+                                                    <td>Down the Line</td><td id="sm-st-dt">3%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="smashStroke" data-parent="smash">
+                                                    <td>Inside In</td><td id="sm-st-ii">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="smashStroke" data-parent="smash">
+                                                    <td>Shank</td><td id="sm-st-sh">3%</td>
+                                                </tr>
+
+
+                                                
+                                                <tr class="group-header" data-group="trick">
+                                                    <td>Trick Shot</td><td id="tr">35%</td>
+                                                </tr>
+
+                                                <tr class="group-item" data-group="trick" data-subgroup="trickStroke">
+                                                    <td>Trick Shot</td><td id="tr-st">10%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="trickStroke" data-parent="trick">
+                                                    <td>In</td><td id="tr-st-in">2%</td>
+                                                </tr>
+                                                <tr class="sub-item" data-subgroup="trickStroke" data-parent="trick">
+                                                    <td>Shank</td><td id="tr-st-sh">3%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- <div class="collapsible-table">
+                                        <button class="table-toggle">Shot Types ▼</button>
+                                        <table class="minimal-table">
+                                            <thead>
+                                                <tr><th>Type</th><th>Frequency</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>Backhand</td><td>45%</td></tr>
+                                                <tr><td>Backhand Stroke</td><td>25%</td></tr>
+                                                <tr><td>Backhand Slice</td><td>30%</td></tr>
+                                                <tr><td>Backhand Drop</td><td>45%</td></tr>
+                                                <tr><td>Backhand Volley</td><td>25%</td></tr>
+                                                <tr><td>Forehand</td><td>45%</td></tr>
+                                                <tr><td>Forehand Stroke</td><td>25%</td></tr>
+                                                <tr><td>Forehand Slice</td><td>30%</td></tr>
+                                                <tr><td>Forehand Drop</td><td>45%</td></tr>
+                                                <tr><td>Forehand Volley</td><td>25%</td></tr>
+                                                <tr><td>Smash</td><td>30%</td></tr>
+                                                <tr><td>Trick Shot</td><td>45%</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div> -->
+                                    
+                                    <div class="collapsible-table">
+                                        <button class="table-toggle tab-toggle">Shot Zones ▼</button>
+                                        <table id="court" class="minimal-table">
+                                            <!-- <thead>
+                                                <tr><th>Zone</th><th>Frequency</th></tr>
+                                            </thead> -->
+                                            <tbody>
+                                                <tr>
+                                                    <td></td><td></td><td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td><td></td><td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td><td></td><td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td><td></td><td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div id="shot-chart2" class="table-container3"></div>
+                            </div>
+                        </div>
+                        <div id="side-menu" class="side-menu fixed" data-expanded="false">
+                            <ul class="side-icons">
+                                <div class="side-selectors">
+                                    <li data-for-tab="Overview" class="tabs-button">
+                                        <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.5253 10.2634L8 13.8578L4.47471 10.2634C2.50843 8.25857 2.50843 4.99627 4.47471 2.99144C6.42507 1.00285 9.57493 1.00285 11.5253 2.99144C13.4916 4.99627 13.4916 8.25857 11.5253 10.2634ZM12.5962 11.3137L9.05051 14.9289L8 16L6.94949 14.9289L3.40381 11.3137C0.865397 8.72554 0.865399 4.52929 3.40381 1.94113C5.94222 -0.647042 10.0578 -0.647042 12.5962 1.94113C15.1346 4.52929 15.1346 8.72554 12.5962 11.3137ZM9 6.5C9 7.05228 8.55228 7.5 8 7.5C7.44772 7.5 7 7.05228 7 6.5C7 5.94772 7.44772 5.5 8 5.5C8.55228 5.5 9 5.94772 9 6.5ZM8 9C9.38071 9 10.5 7.88071 10.5 6.5C10.5 5.11929 9.38071 4 8 4C6.61929 4 5.5 5.11929 5.5 6.5C5.5 7.88071 6.61929 9 8 9Z" fill="currentColor"></path></svg>
+                                        <span class="label">Overview</span> 
+                                    </li>
+                                    <li data-for-tab="Stats" class="tabs-button">
+                                        <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 1V1.75V14.25V15H12.5V14.25V1.75V1H14ZM8.75 6V6.75V14.25V15H7.25V14.25V6.75V6H8.75ZM3.5 4.75V4H2V4.75V14.25V15H3.5V14.25V4.75Z" fill="currentColor"></path></svg>                            
+                                        <span class="label">Stats</span>
+                                    </li>
+                                    <li data-for-tab="Rankings" class="tabs-button">
+                                        <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.6225 0.872994C3.6225 0.681304 3.53419 0.500304 3.3831 0.382336C3.232 0.264368 3.03499 0.222589 2.84902 0.26908L1.84902 0.51908L1.24511 0.670059L1.54707 1.87789L2.15098 1.72691L2.3775 1.67028V3.75049H2H1.3775V4.99549H2H3H4H4.6225V3.75049H4H3.6225V0.872994ZM7.75 2.12749H7.1275V3.37249H7.75H14.25H14.8725V2.12749H14.25H7.75ZM7.1275 7.37749H7.75H14.25H14.8725V8.62249H14.25H7.75H7.1275V7.37749ZM7.1275 12.6275H7.75H14.25H14.8725V13.8725H14.25H7.75H7.1275V12.6275ZM3.06804 11.7464C3.04537 11.739 3.00818 11.7331 2.94549 11.761L2.25283 12.0688L1.68399 12.3217L1.17834 11.184L1.74719 10.9311L2.43985 10.6233C3.87191 9.98682 5.13017 11.7951 4.03567 12.9167L2.72725 14.2575H4.00001H4.62251V15.5025H4.00001H2.43655C1.44311 15.5025 0.939354 14.307 1.63317 13.596L3.14462 12.0472C3.19253 11.9981 3.1999 11.9611 3.20092 11.9373C3.20227 11.9057 3.19218 11.8633 3.16328 11.8218C3.13438 11.7803 3.09812 11.7561 3.06804 11.7464Z" fill="currentColor"></path></svg>                            
+                                        <span class="label">Rankings</span>
+                                    </li>
+                                    <li data-for-tab="Matches" class="tabs-button">
+                                        <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.96452 2.5C11.0257 2.5 13.5 4.96643 13.5 8C13.5 11.0336 11.0257 13.5 7.96452 13.5C6.12055 13.5 4.48831 12.6051 3.48161 11.2273L3.03915 10.6217L1.828 11.5066L2.27046 12.1122C3.54872 13.8617 5.62368 15 7.96452 15C11.8461 15 15 11.87 15 8C15 4.13001 11.8461 1 7.96452 1C5.06835 1 2.57851 2.74164 1.5 5.23347V3.75V3H0V3.75V7.25C0 7.66421 0.335786 8 0.75 8H3.75H4.5V6.5H3.75H2.63724C3.29365 4.19393 5.42843 2.5 7.96452 2.5ZM8.75 5.25V4.5H7.25V5.25V7.8662C7.25 8.20056 7.4171 8.51279 7.6953 8.69825L9.08397 9.62404L9.70801 10.0401L10.5401 8.79199L9.91603 8.37596L8.75 7.59861V5.25Z" fill="currentColor"></path></svg>
+                                        <span class="label">Matches</span>
+                                    </li>
+                                    <li data-for-tab="Shot-Chart" class="tabs-button">
+                                        <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.25 11.75L7.25 14.4572C4.2595 14.1136 1.88638 11.7405 1.5428 8.75H4.25H5V7.25H4.25H1.5428C1.88638 4.2595 4.2595 1.88638 7.25 1.5428V4.25V5H8.75V4.25V1.5428C11.7405 1.88638 14.1136 4.2595 14.4572 7.25L11.75 7.25H11V8.75L11.75 8.75H14.4572C14.1136 11.7405 11.7405 14.1136 8.75 14.4572V11.75L8.75 11H7.25V11.75ZM15.9653 8.75C15.6102 12.5697 12.5697 15.6102 8.75 15.9653V16H8H7.25V15.9653C3.43032 15.6102 0.389836 12.5697 0.0346937 8.75H0V8V7.25H0.0346937C0.389836 3.43032 3.43032 0.389836 7.25 0.0346937V0H8H8.75V0.0346937C12.5697 0.389836 15.6102 3.43032 15.9653 7.25H16V8V8.75H15.9653Z" fill="currentColor"></path></svg>
+                                        <span class="label">Chart</span>
+                                    </li>
+                                </div>
+                                <div class="side-help">
+                                    <div class="for-exp">
+                                        <div class="fin-wrapper">
+                                            <li id="open-side-menu" class="tab-side">
+                                                <!-- <svg class="open-icon" data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 1vw 1vw" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.8536 8.7071C13.2441 8.31657 13.2441 7.68341 12.8536 7.29288L9.03034 3.46966L8.50001 2.93933L7.43935 3.99999L7.96968 4.53032L11.4393 7.99999L7.96968 11.4697L7.43935 12L8.50001 13.0607L9.03034 12.5303L12.8536 8.7071ZM7.85356 8.7071C8.24408 8.31657 8.24408 7.68341 7.85356 7.29288L4.03034 3.46966L3.50001 2.93933L2.43935 3.99999L2.96968 4.53032L6.43935 7.99999L2.96968 11.4697L2.43935 12L3.50001 13.0607L4.03034 12.5303L7.85356 8.7071Z" fill="currentColor"></path></svg>                             -->
+                                                <svg class="open-icon" data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.14647 7.2929C2.75595 7.68343 2.75595 8.31659 3.14647 8.70712L6.96969 12.5303L7.50002 13.0607L8.56068 12L8.03035 11.4697L4.56068 8.00001L8.03035 4.53034L8.56068 4.00001L7.50002 2.93935L6.96969 3.46968L3.14647 7.2929ZM8.14647 7.2929C7.75595 7.68343 7.75595 8.31659 8.14647 8.70712L11.9697 12.5303L12.5 13.0607L13.5607 12L13.0304 11.4697L9.56068 8.00001L13.0304 4.53034L13.5607 4.00001L12.5 2.93935L11.9697 3.46968L8.14647 7.2929Z" fill="currentColor"></path></svg>
+                                                <svg class="close-icon away" data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.8536 8.7071C13.2441 8.31657 13.2441 7.68341 12.8536 7.29288L9.03034 3.46966L8.50001 2.93933L7.43935 3.99999L7.96968 4.53032L11.4393 7.99999L7.96968 11.4697L7.43935 12L8.50001 13.0607L9.03034 12.5303L12.8536 8.7071ZM7.85356 8.7071C8.24408 8.31657 8.24408 7.68341 7.85356 7.29288L4.03034 3.46966L3.50001 2.93933L2.43935 3.99999L2.96968 4.53032L6.43935 7.99999L2.96968 11.4697L2.43935 12L3.50001 13.0607L4.03034 12.5303L7.85356 8.7071Z" fill="currentColor"></path></svg>                            
+                                            </li>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="player.js"></script>
+    <script type="module" src="zCourt.js"></script>
+</body>
+</html>

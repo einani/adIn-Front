@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATP Tennis Tour Tournaments</title>
+    <link rel="stylesheet" href="styleTournament.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class = "scroll-container">
+        <div class="frame-edge frame-top"></div>
+        <div class="frame-edge frame-bottom"></div>
+        <div class="frame-edge frame-left"></div>
+        <div class="frame-edge frame-right"></div>
+        
+        <div class="content">
+            <div class = "navbar2">
+                <div id="sicon" class="pop">
+                    <i class="fas fa-search"></i>
+                </div>
+                <ul id="colorBox" class="nav-items">
+                    <li><a onclick="location.href='index.html'" class="nav-link tab">HOME</a></li>
+                    <li><a onclick="location.href='ben.html'" class="nav-link tab">BEN</a></li>
+                    <li><a onclick="location.href='zRankings.html'" class="nav-link tab">RANKINGS</a></li>
+                    <li><a onclick="location.href='tournaments.html'" class="nav-link tab">TOURNAMENTS</a></li>
+                    <li><a onclick="location.href='leaderboards.html'" class="nav-link tab">LEADERBOARDS</a></li>
+                    <li><a onclick="location.href='temp.html'" class="nav-link tab">TEMP</a></li>
+                    <li><a class="nav-link search">
+                        <i class="fas fa-search"></i>
+                    </a></li>
+                    <div class="search-container">
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </ul>
+                <div id="cicon" class="pop close">
+                    <i class="fas fa-x"></i>
+                </div>
+            </div>
+
+            <!-- TOURNEY WINNERS -->
+            <!-- <div class="top-text">
+                <section id="featured-tournament" class="featured-section">
+                    <div class="featured-win">
+                        <h2 class="featured-title">TITLES / FINALS / SEMIS</h2>
+                        <div class="featured-t-name-grid">
+                            <div class="slam-name ff">
+                                <h6>AO</h6>
+                                <h6>RG</h6>
+                                <h6>WI</h6>
+                                <h6>US</h6>
+                            </div>
+                            <div class="mas-name ff">
+                                <h6>INW</h6>
+                                <h6>MIA</h6>
+                                <h6>MCA</h6>
+                                <h6>MAD</h6>
+                                <h6>ROM</h6>
+                                <h6>CAN</h6>
+                                <h6>CIN</h6>
+                                <h6>SHA</h6>
+                                <h6>PAR</h6>
+                            </div>
+                            <div class="finals-name ff">
+                                <h6>TF</h6>
+                            </div>
+                        </div>
+                        <div class="featured-details win-grid">
+                            <div class="winS-grid">
+                                <div class="stat-item">
+                                    <div class="stat-value">Jannik Sinner</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">Carlos Alcaraz</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">Jannik Sinner</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">Carlos Alcaraz</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-final">Alexander Zverev</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-final">Jannik Sinner</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-final">Carlos Alcaraz</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-final">Jannik Sinner</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Novak Djokovic</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Novak Djokovic</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Novak Djokovic</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Novak Djokovic</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Ben Shelton</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Lorenzo Musetti</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Taylor Fritz</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Felix Auger-Aliassime</div>
+                                </div>
+                            </div>
+                            <div class="winM-grid">
+                                <div class="stat-item">
+                                    <div class="stat-value">Jack Draper</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">Jakub Mensik</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">Carlos Alcaraz</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">Casper Ruud</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">Carlos Alcaraz</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">Ben Shelton</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">Carlos Alcaraz</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">TBD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">TBD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-final">Holger Rune</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-final">Novak Djokovic</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-final">Lorenzo Musetti</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-final">Jack Draper</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-final">Jannik Sinner</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-final">Karen Khachanov</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-final">Jannik Sinner</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-final">TBD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-final">TBD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Carlos Alcaraz</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Taylor Fritz</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Alex De Minaur</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Lorenzo Musetti</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Lorenzo Musetti</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Taylor Fritz</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Alexander Zverev</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">TBD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">TBD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Daniil Medvedev</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Grigor Dimitrov</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Alejandro Davidovich Fokina</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Francisco Cerundolo</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Tommy Paul</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Alexander Zverev</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">Terence Atmane</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">TBD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">TBD</div>
+                                </div>
+                            </div>
+                            <div class="winF-grid">
+                                <div class="stat-item">
+                                    <div class="stat-value">TBD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-final">TBD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">TBD</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">TBD</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div> -->
+
+            <!-- LIVE TOURNEY -->
+            <!-- <div class="top-text">
+                <section id="featured-tournament" class="featured-section">
+                    <div class="featured-info">
+                        <h2 class="featured-title">LIVE TOURNAMENT</h2>
+                        <div class="featured-details">
+                            <h3>Nitto ATP Finals</h3>
+                            <p class="tournament-type masters-1000">Year-End Championship</p>
+                            <p><strong>Dates:</strong> November 10-17, 2025</p>
+                            <p><strong>Location:</strong> Turin, Italy</p>
+                            <p><strong>Surface:</strong> Indoor Hard</p>
+                            <p><strong>Prize Money:</strong> $15,000,000</p>
+                            
+                            <div class="stat-grid">
+                                <div class="stat-item">
+                                    <div class="stat-title">DEFENDING CHAMPION</div>
+                                    <div class="stat-value">Jannik Sinner</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">MOST TITLES</div>
+                                    <div class="stat-value">Roger Federer (6)</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">FIRST HELD</div>
+                                    <div class="stat-value">1970</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-title">FORMAT</div>
+                                    <div class="stat-value">Round Robin</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featured-map">
+
+                    </div>
+                </section>
+            </div> -->
+
+            <!-- CALENDAR -->
+            <div class="top-text">
+                <section id="featured-tournament" class="featured-section">
+                    <div class="featured-cal">
+                        <h2 class="featured-title">ATP CALENDAR</h2>
+                        <div class="featured-details">
+                            <div class="stat-grid year-cal">
+                                <div onclick="location.href='zTournies.html'" class="cal-item">
+                                    <div class="stat-title">January (5)</div>
+                                    <div class="stat-value cal-grid">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                        <div>10</div>
+                                        <div>11</div>
+                                        <div>12</div>
+                                        <div>13</div>
+                                        <div>14</div>
+                                        <div>15</div>
+                                        <div>16</div>
+                                        <div>17</div>
+                                        <div>18</div>
+                                        <div>19</div>
+                                        <div>20</div>
+                                        <div>21</div>
+                                        <div>22</div>
+                                        <div>23</div>
+                                        <div>24</div>
+                                        <div>25</div>
+                                        <div>26</div>
+                                        <div>27</div>
+                                        <div>28</div>
+                                        <div>29</div>
+                                        <div>30</div>
+                                        <div>31</div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="cal-item">
+                                    <div class="stat-title">February (8)</div>
+                                    <div class="stat-value cal-grid">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                        <div>10</div>
+                                        <div>11</div>
+                                        <div>12</div>
+                                        <div>13</div>
+                                        <div>14</div>
+                                        <div>15</div>
+                                        <div>16</div>
+                                        <div>17</div>
+                                        <div>18</div>
+                                        <div>19</div>
+                                        <div>20</div>
+                                        <div>21</div>
+                                        <div>22</div>
+                                        <div>23</div>
+                                        <div>24</div>
+                                        <div>25</div>
+                                        <div>26</div>
+                                        <div>27</div>
+                                        <div>28</div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="cal-item">
+                                    <div class="stat-title">March (5)</div>
+                                    <div class="stat-value cal-grid">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                        <div>10</div>
+                                        <div>11</div>
+                                        <div>12</div>
+                                        <div>13</div>
+                                        <div>14</div>
+                                        <div>15</div>
+                                        <div>16</div>
+                                        <div>17</div>
+                                        <div>18</div>
+                                        <div>19</div>
+                                        <div>20</div>
+                                        <div>21</div>
+                                        <div>22</div>
+                                        <div>23</div>
+                                        <div>24</div>
+                                        <div>25</div>
+                                        <div>26</div>
+                                        <div>27</div>
+                                        <div>28</div>
+                                        <div>29</div>
+                                        <div>30</div>
+                                        <div>31</div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="cal-item">
+                                    <div class="stat-title">April (6)</div>
+                                    <div class="stat-value cal-grid">
+                                        <div></div>
+                                        <div></div>
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                        <div>10</div>
+                                        <div>11</div>
+                                        <div>12</div>
+                                        <div>13</div>
+                                        <div>14</div>
+                                        <div>15</div>
+                                        <div>16</div>
+                                        <div>17</div>
+                                        <div>18</div>
+                                        <div>19</div>
+                                        <div>20</div>
+                                        <div>21</div>
+                                        <div>22</div>
+                                        <div>23</div>
+                                        <div>24</div>
+                                        <div>25</div>
+                                        <div>26</div>
+                                        <div>27</div>
+                                        <div>28</div>
+                                        <div>29</div>
+                                        <div>30</div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="cal-item">
+                                    <div class="stat-title">May (4)</div>
+                                    <div class="stat-value cal-grid">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                        <div>10</div>
+                                        <div>11</div>
+                                        <div>12</div>
+                                        <div>13</div>
+                                        <div>14</div>
+                                        <div>15</div>
+                                        <div>16</div>
+                                        <div>17</div>
+                                        <div>18</div>
+                                        <div>19</div>
+                                        <div>20</div>
+                                        <div>21</div>
+                                        <div>22</div>
+                                        <div>23</div>
+                                        <div>24</div>
+                                        <div>25</div>
+                                        <div>26</div>
+                                        <div>27</div>
+                                        <div>28</div>
+                                        <div>29</div>
+                                        <div>30</div>
+                                        <div>31</div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="cal-item">
+                                    <div class="stat-title">June (7)</div>
+                                    <div class="stat-value cal-grid">
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                        <div>10</div>
+                                        <div>11</div>
+                                        <div>12</div>
+                                        <div>13</div>
+                                        <div>14</div>
+                                        <div>15</div>
+                                        <div>16</div>
+                                        <div>17</div>
+                                        <div>18</div>
+                                        <div>19</div>
+                                        <div>20</div>
+                                        <div>21</div>
+                                        <div>22</div>
+                                        <div>23</div>
+                                        <div>24</div>
+                                        <div>25</div>
+                                        <div>26</div>
+                                        <div>27</div>
+                                        <div>28</div>
+                                        <div>29</div>
+                                        <div>30</div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="cal-item">
+                                    <div class="stat-title">July (7)</div>
+                                    <div class="stat-value cal-grid">
+                                        <div></div>
+                                        <div></div>
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                        <div>10</div>
+                                        <div>11</div>
+                                        <div>12</div>
+                                        <div>13</div>
+                                        <div>14</div>
+                                        <div>15</div>
+                                        <div>16</div>
+                                        <div>17</div>
+                                        <div>18</div>
+                                        <div>19</div>
+                                        <div>20</div>
+                                        <div>21</div>
+                                        <div>22</div>
+                                        <div>23</div>
+                                        <div>24</div>
+                                        <div>25</div>
+                                        <div>26</div>
+                                        <div>27</div>
+                                        <div>28</div>
+                                        <div>29</div>
+                                        <div>30</div>
+                                        <div>31</div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="cal-item">
+                                    <div class="stat-title">August (3)</div>
+                                    <div class="stat-value cal-grid">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                        <div>10</div>
+                                        <div>11</div>
+                                        <div>12</div>
+                                        <div>13</div>
+                                        <div>14</div>
+                                        <div>15</div>
+                                        <div>16</div>
+                                        <div>17</div>
+                                        <div>18</div>
+                                        <div>19</div>
+                                        <div>20</div>
+                                        <div>21</div>
+                                        <div>22</div>
+                                        <div>23</div>
+                                        <div>24</div>
+                                        <div>25</div>
+                                        <div>26</div>
+                                        <div>27</div>
+                                        <div>28</div>
+                                        <div>29</div>
+                                        <div>30</div>
+                                        <div>31</div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="cal-item">
+                                    <div class="stat-title">September (4)</div>
+                                    <div class="stat-value cal-grid">
+                                        <div></div>
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                        <div>10</div>
+                                        <div>11</div>
+                                        <div>12</div>
+                                        <div>13</div>
+                                        <div>14</div>
+                                        <div>15</div>
+                                        <div>16</div>
+                                        <div>17</div>
+                                        <div>18</div>
+                                        <div>19</div>
+                                        <div>20</div>
+                                        <div>21</div>
+                                        <div>22</div>
+                                        <div>23</div>
+                                        <div>24</div>
+                                        <div>25</div>
+                                        <div>26</div>
+                                        <div>27</div>
+                                        <div>28</div>
+                                        <div>29</div>
+                                        <div>30</div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="cal-item">
+                                    <div class="stat-title">October (7)</div>
+                                    <div class="stat-value cal-grid">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                        <div>10</div>
+                                        <div>11</div>
+                                        <div>12</div>
+                                        <div>13</div>
+                                        <div>14</div>
+                                        <div>15</div>
+                                        <div>16</div>
+                                        <div>17</div>
+                                        <div>18</div>
+                                        <div>19</div>
+                                        <div>20</div>
+                                        <div>21</div>
+                                        <div>22</div>
+                                        <div>23</div>
+                                        <div>24</div>
+                                        <div>25</div>
+                                        <div>26</div>
+                                        <div>27</div>
+                                        <div>28</div>
+                                        <div>29</div>
+                                        <div>30</div>
+                                        <div>31</div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="cal-item">
+                                    <div class="stat-title">November (3)</div>
+                                    <div class="stat-value cal-grid">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                        <div>10</div>
+                                        <div>11</div>
+                                        <div>12</div>
+                                        <div>13</div>
+                                        <div>14</div>
+                                        <div>15</div>
+                                        <div>16</div>
+                                        <div>17</div>
+                                        <div>18</div>
+                                        <div>19</div>
+                                        <div>20</div>
+                                        <div>21</div>
+                                        <div>22</div>
+                                        <div>23</div>
+                                        <div>24</div>
+                                        <div>25</div>
+                                        <div>26</div>
+                                        <div>27</div>
+                                        <div>28</div>
+                                        <div>29</div>
+                                        <div>30</div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="cal-item">
+                                    <div class="stat-title">December (0)</div>
+                                    <div class="stat-value cal-grid">
+                                        <div></div>
+                                        <div>1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                        <div>5</div>
+                                        <div>6</div>
+                                        <div>7</div>
+                                        <div>8</div>
+                                        <div>9</div>
+                                        <div>10</div>
+                                        <div>11</div>
+                                        <div>12</div>
+                                        <div>13</div>
+                                        <div>14</div>
+                                        <div>15</div>
+                                        <div>16</div>
+                                        <div>17</div>
+                                        <div>18</div>
+                                        <div>19</div>
+                                        <div>20</div>
+                                        <div>21</div>
+                                        <div>22</div>
+                                        <div>23</div>
+                                        <div>24</div>
+                                        <div>25</div>
+                                        <div>26</div>
+                                        <div>27</div>
+                                        <div>28</div>
+                                        <div>29</div>
+                                        <div>30</div>
+                                        <div>31</div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- CALENDAR MONTH BY MONTH -->
+            <!-- <div class="calendar-nav">
+                <h2 class="second-sec-tour">TOURNAMENT CALENDAR</h2>
+                <button onclick="prev()">⬆️</button>
+                <button onclick="next()">⬇️</button>
+            </div> -->
+            
+            <!-- <section id="targetSection" class="calendar-year">
+                <div class="all-months" id="allMonths">
+                    <div class="month-section">
+                        <div class="month-header">
+                            <p>January</p>
+                        </div>
+                        <div id="january" class="tournament-list">
+                
+                        </div>
+                    </div>
+                    
+                    <div class="month-section">
+                        <div class="month-header">
+                            <p>February</p>February
+                        </div>
+                        <div id="february" class="tournament-list">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="month-section">
+                        <div class="month-header">
+                            <p>March</p>
+                        </div>
+                        <div id="march" class="tournament-list">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="month-section">
+                        <div class="month-header">
+                            <p>April</p>
+                        </div>
+                        <div id="april" class="tournament-list">
+                            
+                        </div>
+                    </div>
+
+                    <div class="month-section">
+                        <div class="month-header">
+                            <p>May</p>
+                        </div>
+                        <div id="may" class="tournament-list">
+                            
+                        </div>
+                    </div>
+
+                    <div class="month-section">
+                        <div class="month-header">
+                            <p>June</p>
+                        </div>
+                        <div id="june" class="tournament-list">
+                            
+                        </div>
+                    </div>
+
+                    <div class="month-section">
+                        <div class="month-header">
+                            <p>July</p>
+                        </div>
+                        <div id="july" class="tournament-list">
+                            
+                        </div>
+                    </div>
+
+                    <div class="month-section">
+                        <div class="month-header">
+                            <p>August</p>
+                        </div>
+                        <div id="august" class="tournament-list">
+                            
+                        </div>
+                    </div>
+
+                    <div class="month-section">
+                        <div class="month-header">
+                            <p>September</p>
+                        </div>
+                        <div id="september" class="tournament-list">
+                            
+                        </div>
+                    </div>
+
+                    <div class="month-section">
+                        <div class="month-header">
+                            <p>October</p>
+                        </div>
+                        <div id="october" class="tournament-list">
+                            
+                        </div>
+                    </div>
+
+                    <div class="month-section">
+                        <div class="month-header">
+                            <p>November</p>
+                        </div>
+                        <div id="november" class="tournament-list">
+                            
+                        </div>
+                    </div>
+
+                    <div class="month-section">
+                        <div class="month-header">
+                            <p>December</p>
+                        </div>
+                        <div id="december" class="tournament-list">
+                            
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="tournaments.js"></script>
+</body>
+</html>

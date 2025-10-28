@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ATP Rankings</title>
+  <link rel="stylesheet" href="styleTournament.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    .player-section {
+      margin: 20vh auto;
+      width: 80vw;
+    }
+
+    .sortable-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px 10px 20px;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .sortable-header div {
+      cursor: pointer;
+    }
+
+    .ranking-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .player-card {
+      background-color: #1a1a1a;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .player-card:hover {
+      background-color: #252525;
+    }
+
+    .rank-label {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--accent-color);
+      width: 30px;
+      text-align: center;
+      margin-right: 10px;
+    }
+
+    .player-info {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      gap: 20px;
+    }
+
+    .name-col {
+      font-size: 1.2rem;
+      color: white;
+      flex: 1;
+    }
+
+    .details-col {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9rem;
+      color: #ccc;
+      min-width: 150px;
+    }
+
+    .expand-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #999;
+      padding-left: 15px;
+    }
+
+    .expand-icon::after {
+      content: "+";
+    }
+
+    .activePlayer .expand-icon::after {
+      content: "-";
+    }
+
+    .player-details {
+      display: none;
+      background-color: #252525;
+      padding: 20px;
+      margin-top: 10px;
+      border-radius: 6px;
+      color: white;
+    }
+
+    .activePlayer + .player-details {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-container">
+    <div class="content">
+      <div class="navbar2">
+        <div id="sicon" class="pop"><i class="fas fa-search"></i></div>
+        <ul id="colorBox" class="nav-items">
+          <li><a onclick="location.href='index.html'" class="nav-link tab">HOME</a></li>
+          <li><a onclick="location.href='ben.html'" class="nav-link tab">BEN</a></li>
+          <li><a onclick="location.href='rankings.html'" class="nav-link tab">RANKINGS</a></li>
+          <li><a onclick="location.href='tournaments.html'" class="nav-link tab">TOURNAMENTS</a></li>
+          <li><a onclick="location.href='leaderboards.html'" class="nav-link tab">LEADERBOARDS</a></li>
+          <li><a onclick="location.href='zRankings.html'" class="nav-link tab">OG</a></li>
+          <li><a class="nav-link search"><i class="fas fa-search"></i></a></li>
+          <div class="search-container"><input type="text" placeholder="Search..." /></div>
+        </ul>
+        <div id="cicon" class="pop close"><i class="fas fa-x"></i></div>
+      </div>
+
+      <section class="player-section">
+        <h2 style="color:white; margin-bottom: 20px;">ATP Rankings - Top 5</h2>
+
+        <div class="sortable-header">
+          <div style="width: 40px;">#</div>
+          <div style="flex: 1;">Player</div>
+          <div onclick="sortBy('points')">Points</div>
+          <div onclick="sortBy('tournament')">Current</div>
+          <div onclick="sortBy('nextPoints')">Next Pts</div>
+          <div onclick="sortBy('maxPoints')">Max Pts</div>
+        </div>
+
+        <div id="rankingGrid" class="ranking-grid">
+          <!-- Cards will be injected here -->
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+  <script>
+    const players = [
+      { rank: 1, name: 'Carlos Alcaraz', points: 9320, tournament: 'Miami Open', nextPoints: 360, maxPoints: 9680, careerHigh: 1, change: 0, details: 'Spain, Age 21, Coach: Ferrero, 12 Titles' },
+      { rank: 2, name: 'Jannik Sinner', points: 9100, tournament: 'Miami Open', nextPoints: 180, maxPoints: 9280, careerHigh: 2, change: +1, details: 'Italy, Age 22, Coach: Cahill, 10 Titles' },
+      { rank: 3, name: 'Novak Djokovic', points: 8900, tournament: 'None', nextPoints: 0, maxPoints: 8900, careerHigh: 1, change: -1, details: 'Serbia, Age 37, Coach: Ivanisevic, 98 Titles' },
+      { rank: 4, name: 'Daniil Medvedev', points: 8500, tournament: 'Miami Open', nextPoints: 500, maxPoints: 9000, careerHigh: 1, change: 0, details: 'Russia, Age 28, Coach: Cervara, 20 Titles' },
+      { rank: 5, name: 'Holger Rune', points: 8200, tournament: 'Miami Open', nextPoints: 250, maxPoints: 8450, careerHigh: 4, change: +1, details: 'Denmark, Age 21, Coach: Mouratoglou, 4 Titles' },
+    ];
+
+    let currentSort = 'rank';
+
+    function renderPlayers() {
+      const container = document.getElementById('rankingGrid');
+      container.innerHTML = '';
+      players.forEach((player, i) => {
+        const card = document.createElement('div');
+        card.className = 'player-card';
+        card.innerHTML = `
+          <div class="rank-label">${player.rank}</div>
+          <div class="player-info">
+            <div class="name-col">${player.name}</div>
+            <div class="details-col">
+              <div>${player.points}</div>
+              <div>${player.tournament}</div>
+              <div>${player.nextPoints}</div>
+              <div>${player.maxPoints}</div>
+            </div>
+          </div>
+          <div class="expand-icon"></div>
+        `;
+        const details = document.createElement('div');
+        details.className = 'player-details';
+        details.innerHTML = `<p>${player.details}</p><p>Career High: ${player.careerHigh}, Change: ${player.change >= 0 ? "+" : ""}${player.change}</p>`;
+
+        // Expand logic
+        card.addEventListener('click', () => {
+          card.classList.toggle('activePlayer');
+          details.style.display = card.classList.contains('activePlayer') ? 'block' : 'none';
+        });
+
+        container.appendChild(card);
+        container.appendChild(details);
+      });
+    }
+
+    function sortBy(key) {
+      if (key === currentSort) return;
+      currentSort = key;
+      players.sort((a, b) => {
+        if (typeof a[key] === 'string') return a[key].localeCompare(b[key]);
+        return b[key] - a[key];
+      });
+      renderPlayers();
+    }
+
+    renderPlayers();
+  </script>
+</body>
+</html>

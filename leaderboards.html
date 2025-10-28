@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="leaderboards.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class = "scroll-container">
+        <div class="frame-edge frame-top"></div>
+        <div class="frame-edge frame-bottom"></div>
+        <div class="frame-edge frame-left"></div>
+        <div class="frame-edge frame-right"></div>
+
+        <div class = "content">
+            <div class = "navbar2">
+                <div id="sicon" class="pop">
+                    <i class="fas fa-search"></i>
+                </div>
+                <ul id="colorBox" class="nav-items">
+                    <li><a onclick="location.href='index.html'" class="nav-link tab">HOME</a></li>
+                    <li><a onclick="location.href='zPlayers.html'" class="nav-link tab">PLAYERS</a></li>
+                    <li><a onclick="location.href='zRankings.html'" class="nav-link tab">RANKINGS</a></li>
+                    <li><a onclick="location.href='tournaments.html'" class="nav-link tab">TOURNAMENTS</a></li>
+                    <li><a onclick="location.href='leaderboards.html'" class="nav-link tab">LEADERBOARDS</a></li>
+                    <li><a onclick="location.href='blog.html'" class="nav-link tab">TEMP</a></li>
+                    <li><a class="nav-link search">
+                        <i class="fas fa-search"></i>
+                    </a></li>
+                    <div class="search-container">
+                        <input id="search-input" type="text" placeholder="Search..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search...">
+                        <ul id="search-suggestions"></ul>
+                    </div>
+                </ul>
+                <div id="cicon" class="pop close">
+                    <i class="fas fa-x"></i>
+                </div>
+            </div>
+            <div class="top-text">
+                <div class="text-viewport">
+                    <div class="text-track">
+                        <section id="featured-tournament" class="featured-section">
+                            <div class="ldrb">
+                                <div class="featured-titi">
+                                    <svg id="data-left" data-testid="geist-icon" height="2vw" stroke-linejoin="round" viewBox="0 0 16 16" width="2vw" style="color: white;"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 14.0607L9.96966 13.5303L5.14644 8.7071C4.75592 8.31658 4.75592 7.68341 5.14644 7.29289L9.96966 2.46966L10.5 1.93933L11.5607 2.99999L11.0303 3.53032L6.56065 7.99999L11.0303 12.4697L11.5607 13L10.5 14.0607Z" fill="currentColor"></path></svg>
+                                    <h2 class="featured-title">ADVANCED STATS</h2>
+                                    <svg id="data-right" data-testid="geist-icon" height="2vw" stroke-linejoin="round" viewBox="0 0 16 16" width="2vw" style="color: white;"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.50001 1.93933L6.03034 2.46966L10.8536 7.29288C11.2441 7.68341 11.2441 8.31657 10.8536 8.7071L6.03034 13.5303L5.50001 14.0607L4.43935 13L4.96968 12.4697L9.43935 7.99999L4.96968 3.53032L4.43935 2.99999L5.50001 1.93933Z" fill="currentColor"></path></svg>
+                                </div>
+                                <div class="ldrb-tab">
+                                    <div class="ldrb-tit">
+                                        <div class="ldrb-full">
+                                            <div class="icon-holder">
+                                                <svg class="mini" data-testid="geist-icon" height="1vw" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="1vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 1V1.75V5C6 5.55229 5.55228 6 5 6H1.75H1V4.5H1.75H4.5V1.75V1H6ZM14.25 6H15V4.5H14.25H11.5V1.75V1H10V1.75V5C10 5.55228 10.4477 6 11 6H14.25ZM10 14.25V15H11.5V14.25V11.5H14.29H15.04V10H14.29H11C10.4477 10 10 10.4477 10 11V14.25ZM1.75 10H1V11.5H1.75H4.5V14.25V15H6V14.25V11C6 10.4477 5.55229 10 5 10H1.75Z" fill="currentColor"></path></svg> 
+                                            </div>
+                                            <h6>Serve Stats</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table ace-table">
+                                                    <thead>
+                                                        <!-- <tr>
+                                                            <th>Name</th>
+                                                            <th>A%</th>
+                                                            <th>A:DF</th>
+                                                            <th>1st%</th>
+                                                        </tr> -->
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Srv v Ret</th>
+                                                            <th>P Intolerance</th>
+                                                            <th>P Shortness</th>
+                                                            <th>Serve Focus</th>
+                                                            <th>W1v2dif</th>
+                                                            <th>A%</th>
+                                                            <th>DF%</th>
+                                                            <th>1stIn</th>
+                                                            <th>w1st</th>
+                                                            <th>w2nd</th>
+                                                            <th>wSrv</th>
+                                                            <th>A:DF</th>
+                                                            <th>A/1st</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                    <!-- <tbody>
+                                                        <tr>
+                                                            <td>Giovanni Mpetshi Perricard</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fritz</td>
+                                                            <td>19%</td>
+                                                            <td>3.2</td>
+                                                            <td>72.1%</td>
+                                                        </tr>
+                                                    </tbody> -->
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-inv">
+                                            <div class="icon-holder">
+                                                <svg class="full" data-testid="geist-icon" height="1vw" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="1vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 5.25V6H2.5V5.25V2.5H5.25H6V1H5.25H2C1.44772 1 1 1.44772 1 2V5.25ZM5.25 14.9994H6V13.4994H5.25H2.5V10.7494V9.99939H1V10.7494V13.9994C1 14.5517 1.44772 14.9994 2 14.9994H5.25ZM15 10V10.75V14C15 14.5523 14.5523 15 14 15H10.75H10V13.5H10.75H13.5V10.75V10H15ZM10.75 1H10V2.5H10.75H13.5V5.25V6H15V5.25V2C15 1.44772 14.5523 1 14 1H10.75Z" fill="currentColor"></path></svg>
+                                            </div>
+                                            <h6>1st vs 2nd</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table ace1-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>W1v2dif</th>
+                                                            <th>1st Win %</th>
+                                                            <th>2nd Win %</th>
+                                                            <th>1stIn</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-inv">
+                                            <div class="icon-holder">
+                                                <svg class="full" data-testid="geist-icon" height="1vw" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="1vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 5.25V6H2.5V5.25V2.5H5.25H6V1H5.25H2C1.44772 1 1 1.44772 1 2V5.25ZM5.25 14.9994H6V13.4994H5.25H2.5V10.7494V9.99939H1V10.7494V13.9994C1 14.5517 1.44772 14.9994 2 14.9994H5.25ZM15 10V10.75V14C15 14.5523 14.5523 15 14 15H10.75H10V13.5H10.75H13.5V10.75V10H15ZM10.75 1H10V2.5H10.75H13.5V5.25V6H15V5.25V2C15 1.44772 14.5523 1 14 1H10.75Z" fill="currentColor"></path></svg>
+                                            </div>
+                                            <h6>Servebot Stats</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table ace2-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>P Intolerance</th>
+                                                            <th>P Shortness</th>
+                                                            <th>Serve Focus</th>
+                                                            <th>A%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-inv">
+                                            <div class="icon-holder">
+                                                <svg class="full" data-testid="geist-icon" height="1vw" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="1vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 5.25V6H2.5V5.25V2.5H5.25H6V1H5.25H2C1.44772 1 1 1.44772 1 2V5.25ZM5.25 14.9994H6V13.4994H5.25H2.5V10.7494V9.99939H1V10.7494V13.9994C1 14.5517 1.44772 14.9994 2 14.9994H5.25ZM15 10V10.75V14C15 14.5523 14.5523 15 14 15H10.75H10V13.5H10.75H13.5V10.75V10H15ZM10.75 1H10V2.5H10.75H13.5V5.25V6H15V5.25V2C15 1.44772 14.5523 1 14 1H10.75Z" fill="currentColor"></path></svg>
+                                            </div>
+                                            <h6>Serve vs Return</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table ace3-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Srv v Ret</th>
+                                                            <th>SrvW%</th>
+                                                            <th>A:DF</th>
+                                                            <th>A/1st</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ldrb-tit">
+                                        <div class="ldrb-full">
+                                            <div class="icon-holder">
+                                                <svg class="mini" data-testid="geist-icon" height="1vw" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="1vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 1V1.75V5C6 5.55229 5.55228 6 5 6H1.75H1V4.5H1.75H4.5V1.75V1H6ZM14.25 6H15V4.5H14.25H11.5V1.75V1H10V1.75V5C10 5.55228 10.4477 6 11 6H14.25ZM10 14.25V15H11.5V14.25V11.5H14.29H15.04V10H14.29H11C10.4477 10 10 10.4477 10 11V14.25ZM1.75 10H1V11.5H1.75H4.5V14.25V15H6V14.25V11C6 10.4477 5.55229 10 5 10H1.75Z" fill="currentColor"></path></svg> 
+                                            </div>
+                                            <h6>Return Stats</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table ret-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Ret Focus</th>
+                                                            <th>Ret Gamble</th>
+                                                            <th>Srv Pressure</th>
+                                                            <th>Ret Reliability</th>
+                                                            <th>vsA%</th>
+                                                            <th>wVs1st</th>
+                                                            <th>wVs2nd</th>
+                                                            <th>wRet</th>
+                                                            <th>bp/set</th>
+                                                            <th>brk/set</th>
+                                                            <th>bpcnv%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-inv">
+                                            <div class="icon-holder">
+                                                <svg class="full" data-testid="geist-icon" height="1vw" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="1vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 5.25V6H2.5V5.25V2.5H5.25H6V1H5.25H2C1.44772 1 1 1.44772 1 2V5.25ZM5.25 14.9994H6V13.4994H5.25H2.5V10.7494V9.99939H1V10.7494V13.9994C1 14.5517 1.44772 14.9994 2 14.9994H5.25ZM15 10V10.75V14C15 14.5523 14.5523 15 14 15H10.75H10V13.5H10.75H13.5V10.75V10H15ZM10.75 1H10V2.5H10.75H13.5V5.25V6H15V5.25V2C15 1.44772 14.5523 1 14 1H10.75Z" fill="currentColor"></path></svg>
+                                            </div>
+                                            <h6>Return Stringing Points</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table ret1-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Ret Focus</th>
+                                                            <th>bp/set</th>
+                                                            <th>brk/set</th>
+                                                            <th>bpcnv%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-inv">
+                                            <div class="icon-holder">
+                                                <svg class="full" data-testid="geist-icon" height="1vw" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="1vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 5.25V6H2.5V5.25V2.5H5.25H6V1H5.25H2C1.44772 1 1 1.44772 1 2V5.25ZM5.25 14.9994H6V13.4994H5.25H2.5V10.7494V9.99939H1V10.7494V13.9994C1 14.5517 1.44772 14.9994 2 14.9994H5.25ZM15 10V10.75V14C15 14.5523 14.5523 15 14 15H10.75H10V13.5H10.75H13.5V10.75V10H15ZM10.75 1H10V2.5H10.75H13.5V5.25V6H15V5.25V2C15 1.44772 14.5523 1 14 1H10.75Z" fill="currentColor"></path></svg>
+                                            </div>
+                                            <h6>Return Gambling</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table ret2-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Ret Gamble</th>
+                                                            <th>Ret Reliability</th>
+                                                            <th>vsA%</th>
+                                                            <th>wRet</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-inv">
+                                            <div class="icon-holder">
+                                                <svg class="full" data-testid="geist-icon" height="1vw" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="1vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 5.25V6H2.5V5.25V2.5H5.25H6V1H5.25H2C1.44772 1 1 1.44772 1 2V5.25ZM5.25 14.9994H6V13.4994H5.25H2.5V10.7494V9.99939H1V10.7494V13.9994C1 14.5517 1.44772 14.9994 2 14.9994H5.25ZM15 10V10.75V14C15 14.5523 14.5523 15 14 15H10.75H10V13.5H10.75H13.5V10.75V10H15ZM10.75 1H10V2.5H10.75H13.5V5.25V6H15V5.25V2C15 1.44772 14.5523 1 14 1H10.75Z" fill="currentColor"></path></svg>
+                                            </div>
+                                            <h6>vs Serve Types</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table ret3-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Srv Pressure</th>
+                                                            <th>wVs1st</th>
+                                                            <th>wVs2nd</th>
+                                                            <th>wRet</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ldrb-tit">
+                                        <div class="ldrb-full">
+                                            <div class="icon-holder">
+                                                <svg class="mini" data-testid="geist-icon" height="1vw" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="1vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 1V1.75V5C6 5.55229 5.55228 6 5 6H1.75H1V4.5H1.75H4.5V1.75V1H6ZM14.25 6H15V4.5H14.25H11.5V1.75V1H10V1.75V5C10 5.55228 10.4477 6 11 6H14.25ZM10 14.25V15H11.5V14.25V11.5H14.29H15.04V10H14.29H11C10.4477 10 10 10.4477 10 11V14.25ZM1.75 10H1V11.5H1.75H4.5V14.25V15H6V14.25V11C6 10.4477 5.55229 10 5 10H1.75Z" fill="currentColor"></path></svg> 
+                                            </div>
+                                            <h6>Rally Stats</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table ral-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Chance Efficiency</th>
+                                                            <th>Convert Efficiency</th>
+                                                            <th>wNon-A%</th>
+                                                            <th>wVs1stNon-A%</th>
+                                                            <th>Free P%</th>
+                                                            <th>Brk Differential</th>
+                                                            <th>Chance Differential</th>
+                                                            <th>S/R Distribution</th>
+                                                            <th>p/set</th>
+                                                            <th>p/game</th>
+                                                            <th>game/set</th>
+                                                            <th>set/match</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-inv">
+                                            <div class="icon-holder">
+                                                <svg class="full" data-testid="geist-icon" height="1vw" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="1vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 5.25V6H2.5V5.25V2.5H5.25H6V1H5.25H2C1.44772 1 1 1.44772 1 2V5.25ZM5.25 14.9994H6V13.4994H5.25H2.5V10.7494V9.99939H1V10.7494V13.9994C1 14.5517 1.44772 14.9994 2 14.9994H5.25ZM15 10V10.75V14C15 14.5523 14.5523 15 14 15H10.75H10V13.5H10.75H13.5V10.75V10H15ZM10.75 1H10V2.5H10.75H13.5V5.25V6H15V5.25V2C15 1.44772 14.5523 1 14 1H10.75Z" fill="currentColor"></path></svg>
+                                            </div>
+                                            <h6>Efficiency Stats</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table ral1-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Chnc Efficiency</th>
+                                                            <th>Cnvt Efficiency</th>
+                                                            <th>Free P%</th>
+                                                            <th>S/R Distribution</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-inv">
+                                            <div class="icon-holder">
+                                                <svg class="full" data-testid="geist-icon" height="1vw" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="1vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 5.25V6H2.5V5.25V2.5H5.25H6V1H5.25H2C1.44772 1 1 1.44772 1 2V5.25ZM5.25 14.9994H6V13.4994H5.25H2.5V10.7494V9.99939H1V10.7494V13.9994C1 14.5517 1.44772 14.9994 2 14.9994H5.25ZM15 10V10.75V14C15 14.5523 14.5523 15 14 15H10.75H10V13.5H10.75H13.5V10.75V10H15ZM10.75 1H10V2.5H10.75H13.5V5.25V6H15V5.25V2C15 1.44772 14.5523 1 14 1H10.75Z" fill="currentColor"></path></svg>
+                                            </div>
+                                            <h6>Neutral Starts</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table ral2-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>wNon-A%</th>
+                                                            <th>wVs1stNon-A%</th>
+                                                            <th>Brk Differential</th>
+                                                            <th>Chnc Differential</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-inv">
+                                            <div class="icon-holder">
+                                                <svg class="full" data-testid="geist-icon" height="1vw" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="1vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 5.25V6H2.5V5.25V2.5H5.25H6V1H5.25H2C1.44772 1 1 1.44772 1 2V5.25ZM5.25 14.9994H6V13.4994H5.25H2.5V10.7494V9.99939H1V10.7494V13.9994C1 14.5517 1.44772 14.9994 2 14.9994H5.25ZM15 10V10.75V14C15 14.5523 14.5523 15 14 15H10.75H10V13.5H10.75H13.5V10.75V10H15ZM10.75 1H10V2.5H10.75H13.5V5.25V6H15V5.25V2C15 1.44772 14.5523 1 14 1H10.75Z" fill="currentColor"></path></svg>
+                                            </div>
+                                            <h6>Set Lengths</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table ral3-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>p/set</th>
+                                                            <th>p/game</th>
+                                                            <th>game/set</th>
+                                                            <th>set/match</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="featured-tournament" class="featured-section">
+                            <div class="featured-info titt">
+                                <h2 class="featured-title">TITLES RACE</h2>
+                                <div class="featured-details">
+                                    <div class="ldr-tit">
+                                        <div class="tit-inv"></div>
+                                        <div class="tit-inv"></div>
+                                        <div class="tit-inv"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="featured-tournament" class="featured-section">
+                            <div class="ldrb">
+                                <div class="featured-titi">
+                                    <svg id="data-lef" data-testid="geist-icon" height="2vw" stroke-linejoin="round" viewBox="0 0 16 16" width="2vw" style="color: white;"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 14.0607L9.96966 13.5303L5.14644 8.7071C4.75592 8.31658 4.75592 7.68341 5.14644 7.29289L9.96966 2.46966L10.5 1.93933L11.5607 2.99999L11.0303 3.53032L6.56065 7.99999L11.0303 12.4697L11.5607 13L10.5 14.0607Z" fill="currentColor"></path></svg>
+                                    <h2 class="featured-title">CLASSIC STATS</h2>
+                                    <svg id="data-righ" data-testid="geist-icon" height="2vw" stroke-linejoin="round" viewBox="0 0 16 16" width="2vw" style="color: white;"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.50001 1.93933L6.03034 2.46966L10.8536 7.29288C11.2441 7.68341 11.2441 8.31657 10.8536 8.7071L6.03034 13.5303L5.50001 14.0607L4.43935 13L4.96968 12.4697L9.43935 7.99999L4.96968 3.53032L4.43935 2.99999L5.50001 1.93933Z" fill="currentColor"></path></svg>
+                                </div>
+                                <div class="ldrb-cls">
+                                    <div class="ldrb-cls-tit">
+                                        <div class="ldrb-cls-full">
+                                            <!-- <div class="icon-holder">
+                                                <svg class="mini" data-testid="geist-icon" height="1vw" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="1vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 1V1.75V5C6 5.55229 5.55228 6 5 6H1.75H1V4.5H1.75H4.5V1.75V1H6ZM14.25 6H15V4.5H14.25H11.5V1.75V1H10V1.75V5C10 5.55228 10.4477 6 11 6H14.25ZM10 14.25V15H11.5V14.25V11.5H14.29H15.04V10H14.29H11C10.4477 10 10 10.4477 10 11V14.25ZM1.75 10H1V11.5H1.75H4.5V14.25V15H6V14.25V11C6 10.4477 5.55229 10 5 10H1.75Z" fill="currentColor"></path></svg> 
+                                            </div> -->
+                                            <h6>Match Stats</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table mat1-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Pnts W%</th>
+                                                            <th>Ace%</th>
+                                                            <th>DF%</th>
+                                                            <th>1st In%</th>
+                                                            <th>1st W%</th>
+                                                            <th>2nd W%</th>
+                                                            <th>BPFac/Set</th>
+                                                            <th>BPBrk/Set</th>
+                                                            <th>BPGen/Set</th>
+                                                            <th>BPCnv/Set</th>
+                                                            <th>Srv W%</th>
+                                                            <th>Ret W%</th>
+                                                            <th>Ret 1st W%</th>
+                                                            <th>Ret 2nd W%</th>
+                                                            <th>Ace/Set</th>
+                                                            <th>DF/Set</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ldrb-cls-tit">
+                                        <div class="ldrb-cls-full">
+                                            <!-- <div class="icon-holder">
+                                                <svg class="mini" data-testid="geist-icon" height="1vw" stroke-linejoin="round" style="color:white" viewBox="0 0 16 16" width="1vw"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 1V1.75V5C6 5.55229 5.55228 6 5 6H1.75H1V4.5H1.75H4.5V1.75V1H6ZM14.25 6H15V4.5H14.25H11.5V1.75V1H10V1.75V5C10 5.55228 10.4477 6 11 6H14.25ZM10 14.25V15H11.5V14.25V11.5H14.29H15.04V10H14.29H11C10.4477 10 10 10.4477 10 11V14.25ZM1.75 10H1V11.5H1.75H4.5V14.25V15H6V14.25V11C6 10.4477 5.55229 10 5 10H1.75Z" fill="currentColor"></path></svg> 
+                                            </div> -->
+                                            <h6>Match Results</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table mat2-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Matches</th>
+                                                            <th>Wins</th>
+                                                            <th>Losses</th>
+                                                            <th>W%</th>
+                                                            <th>Sets W</th>
+                                                            <th>Sets L</th>
+                                                            <th>Set%</th>
+                                                            <th>Games W</th>
+                                                            <th>Games L</th>
+                                                            <th>Games%</th>
+                                                            <th>TB W</th>
+                                                            <th>TB L</th>
+                                                            <th>TB%</th>
+                                                            <th>Trnts</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="featured-tournament" class="featured-section">
+                            <div class="ldrb">
+                                <div class="featured-titi">
+                                    <svg id="data-le" data-testid="geist-icon" height="2vw" stroke-linejoin="round" viewBox="0 0 16 16" width="2vw" style="color: white;"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 14.0607L9.96966 13.5303L5.14644 8.7071C4.75592 8.31658 4.75592 7.68341 5.14644 7.29289L9.96966 2.46966L10.5 1.93933L11.5607 2.99999L11.0303 3.53032L6.56065 7.99999L11.0303 12.4697L11.5607 13L10.5 14.0607Z" fill="currentColor"></path></svg>
+                                    <h2 class="featured-title">SEASON HIGHS</h2>
+                                    <svg id="data-ri" data-testid="geist-icon" height="2vw" stroke-linejoin="round" viewBox="0 0 16 16" width="2vw" style="color: white;"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.50001 1.93933L6.03034 2.46966L10.8536 7.29288C11.2441 7.68341 11.2441 8.31657 10.8536 8.7071L6.03034 13.5303L5.50001 14.0607L4.43935 13L4.96968 12.4697L9.43935 7.99999L4.96968 3.53032L4.43935 2.99999L5.50001 1.93933Z" fill="currentColor"></path></svg>
+                                </div>
+                                <div class="ldrb-high">
+                                    <div class="ldrb-high-tit">
+                                        <div class="ldrb-high-inv">
+                                            <h6>Points Won%</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high1-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Pnts W%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>ACE%</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high2-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Ace%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>DF%</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high3-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>DF%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>1st In%</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high4-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>1st In%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>Aces</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high5-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Ace</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>DFs</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high6-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>DF</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ldrb-high-tit">
+                                        <div class="ldrb-high-inv">
+                                            <h6>BP Faced</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high7-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>BPFac</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>BP Saved</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high8-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>BPSvd</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>BP Generated</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high9-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>BPGen</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>BP Converted</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high10-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>BPCnv</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>Serve W%</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high11-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Srv W%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>Return W%</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high12-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Ret W%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ldrb-high-tit">
+                                        <div class="ldrb-high-inv">
+                                            <h6>Return 1st W%</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high13-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Ret 1st W%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>Return 2nd W%</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high14-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Ret 2nd W%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>1st Serve Miss</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high15-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>1st Out%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>Return Lost%</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high16-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Ret P L%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>vs Aces</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high17-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>vsA</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="ldrb-high-inv">
+                                            <h6>vs Ace%</h6>
+                                            <div class="ldrb-wrapper">
+                                                <table class="ldrb-table high18-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>vsA%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>                                           
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="featured-tournament" class="featured-section">
+                            <div class="featured-info titt">
+                                <h2 class="featured-title">TITLES RACE</h2>
+                                <div class="featured-details">
+                                    <div class="ldr-tit">
+                                        <div class="tit-inv"></div>
+                                        <div class="tit-inv"></div>
+                                        <div class="tit-inv"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div id="side-menu" class="side-menu fixed" data-expanded="false">
+                    <ul class="side-icons">
+                        <div class="side-selectors">
+                            <li data-index="0" class="tabs-button">
+                                <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><g clip-path="url(#clip0_6799_10812)"><path d="M8 5.03125C9.6396 5.03125 10.9688 6.3604 10.9688 8C10.9688 9.6396 9.6396 10.9688 8 10.9688C6.3604 10.9688 5.03125 9.6396 5.03125 8C5.03125 6.3604 6.3604 5.03125 8 5.03125Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C12.4183 0 16 3.58172 16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0ZM8 1.5C4.41015 1.5 1.5 4.41015 1.5 8C1.5 11.5899 4.41015 14.5 8 14.5C11.5899 14.5 14.5 11.5899 14.5 8C14.5 4.41015 11.5899 1.5 8 1.5Z" fill="currentColor"></path></g><defs><clipPath id="clip0_6799_10812"><rect width="16" height="16" fill="currentColor"></rect></clipPath></defs></svg>
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" height="1vw" width="1vw" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0" /></svg> -->
+                                <span class="label">Advanced Stats</span> 
+                            </li>
+                            <li data-index="1" class="tabs-button">
+                                <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 0.5V1.25V2H10.5V1.25V0.5H12V1.25V2H14H15.5V3.5V13.5C15.5 14.8807 14.3807 16 13 16H3C1.61929 16 0.5 14.8807 0.5 13.5V3.5V2H2H4V1.25V0.5H5.5ZM2 3.5H14V6H2V3.5ZM2 7.5V13.5C2 14.0523 2.44772 14.5 3 14.5H13C13.5523 14.5 14 14.0523 14 13.5V7.5H2Z" fill="currentColor"></path></svg>
+                                <span class="label">Chart Stats</span>
+                            </li>
+                            <li data-index="2" class="tabs-button">
+                                <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.206 1.72114L15.9272 1.5151L15.5151 0.0728149L14.794 0.278856L0.793958 4.27886L0.0728149 4.4849L0.484897 5.92718L1.20604 5.72114L15.206 1.72114ZM7.11102 5.39697L8 4L8.88898 5.39697L14.0455 13.5L15 15H13.222H2.77796H0.999999L1.95454 13.5L7.11102 5.39697ZM3.73251 13.5L8 6.79394L12.2675 13.5H3.73251Z" fill="currentColor"></path></svg>
+                                <span class="label">Classic Stats</span>
+                            </li>
+                            <li data-index="3" class="tabs-button">
+                                <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 4C3.19036 4 3.75 3.44036 3.75 2.75C3.75 2.05964 3.19036 1.5 2.5 1.5C1.80964 1.5 1.25 2.05964 1.25 2.75C1.25 3.44036 1.80964 4 2.5 4ZM2.5 9.25C3.19036 9.25 3.75 8.69036 3.75 8C3.75 7.30964 3.19036 6.75 2.5 6.75C1.80964 6.75 1.25 7.30964 1.25 8C1.25 8.69036 1.80964 9.25 2.5 9.25ZM3.75 13.25C3.75 13.9404 3.19036 14.5 2.5 14.5C1.80964 14.5 1.25 13.9404 1.25 13.25C1.25 12.5596 1.80964 12 2.5 12C3.19036 12 3.75 12.5596 3.75 13.25ZM6.75 2H6V3.5H6.75H14.25H15V2H14.25H6.75ZM6.75 7.25H6V8.75H6.75H14.25H15V7.25H14.25H6.75ZM6.75 12.5H6V14H6.75H14.25H15V12.5H14.25H6.75Z" fill="currentColor"></path></svg>
+                                <span class="label">Season Highs</span>
+                            </li>
+                            <li data-index="4" class="tabs-button">
+                                <svg data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.75 0C2.50736 0 1.5 1.00736 1.5 2.25V13.744V13.75H1.50001C1.50323 14.9899 2.50935 15.994 3.75 15.994H13H14.5V14.494V13.7296V12.994V11.494V0.75V0H13.75H3.75ZM13 11.494V1.5H3.75C3.33579 1.5 3 1.83579 3 2.25V11.622C3.23458 11.5391 3.48702 11.494 3.75 11.494H13ZM3 13.744C3 14.1582 3.33579 14.494 3.75 14.494H13V13.7296V12.994H3.75C3.33579 12.994 3 13.3298 3 13.744Z" fill="currentColor"></path></svg>
+                                <span class="label">Archive</span>
+                            </li>
+                        </div>
+                        <div class="side-help">
+                            <div class="for-exp">
+                                <div class="fin-wrapper">
+                                    <li id="open-side-menu" class="tab-side">
+                                        <!-- <svg class="open-icon" data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 1vw 1vw" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.8536 8.7071C13.2441 8.31657 13.2441 7.68341 12.8536 7.29288L9.03034 3.46966L8.50001 2.93933L7.43935 3.99999L7.96968 4.53032L11.4393 7.99999L7.96968 11.4697L7.43935 12L8.50001 13.0607L9.03034 12.5303L12.8536 8.7071ZM7.85356 8.7071C8.24408 8.31657 8.24408 7.68341 7.85356 7.29288L4.03034 3.46966L3.50001 2.93933L2.43935 3.99999L2.96968 4.53032L6.43935 7.99999L2.96968 11.4697L2.43935 12L3.50001 13.0607L4.03034 12.5303L7.85356 8.7071Z" fill="currentColor"></path></svg>                             -->
+                                        <svg class="open-icon" data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.14647 7.2929C2.75595 7.68343 2.75595 8.31659 3.14647 8.70712L6.96969 12.5303L7.50002 13.0607L8.56068 12L8.03035 11.4697L4.56068 8.00001L8.03035 4.53034L8.56068 4.00001L7.50002 2.93935L6.96969 3.46968L3.14647 7.2929ZM8.14647 7.2929C7.75595 7.68343 7.75595 8.31659 8.14647 8.70712L11.9697 12.5303L12.5 13.0607L13.5607 12L13.0304 11.4697L9.56068 8.00001L13.0304 4.53034L13.5607 4.00001L12.5 2.93935L11.9697 3.46968L8.14647 7.2929Z" fill="currentColor"></path></svg>
+                                        <svg class="close-icon away" data-testid="geist-icon" height="1vw" stroke-linejoin="round" viewBox="0 0 16 16" width="1vw" style="color: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.8536 8.7071C13.2441 8.31657 13.2441 7.68341 12.8536 7.29288L9.03034 3.46966L8.50001 2.93933L7.43935 3.99999L7.96968 4.53032L11.4393 7.99999L7.96968 11.4697L7.43935 12L8.50001 13.0607L9.03034 12.5303L12.8536 8.7071ZM7.85356 8.7071C8.24408 8.31657 8.24408 7.68341 7.85356 7.29288L4.03034 3.46966L3.50001 2.93933L2.43935 3.99999L2.96968 4.53032L6.43935 7.99999L2.96968 11.4697L2.43935 12L3.50001 13.0607L4.03034 12.5303L7.85356 8.7071Z" fill="currentColor"></path></svg>                            
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="leaderboards.js"></script>
+</body>
+</html>

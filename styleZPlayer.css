@@ -1,0 +1,679 @@
+/* 
+clay-court by Boris Misevic @borisview (unsplash)
+grass-court by @helloimnik (unsplash)
+hard-court by Parsoa Khorsand @parsoakhorsand (unsplash)
+stands by Reed Mok @reeeed (unsplash)
+*/
+
+/* TOP 10 SECTION */
+.t10-cont {
+    width: 100%;
+    height: 28vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topten {
+    height: 28vw;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1vw 3vw;
+    /* font-size: 0.8vw; */
+    /* background-color: red; */
+}
+
+.pp-rnk {
+    /* height: 10%; */
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pp-rnk div {
+    color: white;
+    /* height: 25%; */
+    font-size: 0.9vw;
+    font-weight: 700;
+    width: 1.5vw;
+    height: 1.5vw;
+    background-color: rgba(30, 255, 135, 0.7);
+    border: 2px solid white;
+    border-radius: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pp-big {
+    display: flex;
+    justify-content: end;
+    background-color: rgba(18, 18, 18, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 1vw;
+}
+
+.pp-inv {
+    display: flex;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 1vw;
+    background-color: rgba(18, 18, 18, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5%;
+    width: 80%;
+    transition: all 0.3s ease;
+}
+
+.pp-inv:hover {
+    background-color: rgba(30, 255, 135, 0.9);
+    cursor: pointer;
+}
+
+.pp-inv .p-dd .nnmm {
+    font-size: 0.9vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 25%;
+    border-bottom: 1px solid white;
+    /* background-color: blueviolet; */
+}
+
+.pp-inv .p-dd .ttll {
+    font-size: 0.65vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* text-align: center; */
+    align-items: center;
+    height: 75%;
+    opacity: 0.8;
+    margin: 0;
+    /* background-color: red; */
+}
+
+
+/* ------------------ RECENT TITLES SECTION ------------------ */
+.titt {
+    width: 95%;
+    /* height: 95%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ldr-tit {
+    /* background-color: red; */
+    height: 28vw;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1;
+    gap: 20px;
+}
+
+.tit-inv {
+    display: flex;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 2vw;
+    background-color: rgba(18, 18, 18, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5%;
+    transition: all 0.3s ease;
+}
+
+.tit-inv:hover {
+    background-color: rgba(30, 255, 135, 0.9);
+    cursor: pointer;
+}
+
+.p-pfo {
+    background: url('./assets/Players/Ben_Shelton\,_aufgenommen_an_Swiss_Indoors_Basel_2024.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 85%;
+    height: 40%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 1vw;
+}
+
+.p-dd {
+    /* background-color: red; */
+    background-color: rgba(25, 25, 25, 1);
+    width: 85%;
+    height: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nnmm, .ttll {
+    /* height: 50%; */
+    /* font-size: 1vw; */
+    color: white;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    width: 100%;
+    /* border-bottom: 1px solid white; */
+}
+
+.tit-inv .p-dd .nnmm {
+    font-size: 1vw;
+    height: 20%;
+    font-weight: 600;
+    border-bottom: 1px solid white;
+}
+
+.tit-inv .p-dd .ttll {
+    flex-direction: column;
+    opacity: 0.8;
+    font-size: 0.8vw;
+    height: 45%;
+    border-bottom: 1px solid white;
+}
+
+.tit-inv .p-dd .ttll .tgr {
+    opacity: 0.7;
+    font-size: 0.5vw;
+}
+
+.tgr {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 100%;
+}
+
+.tgr div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.tit-rnk {
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tit-rnk div{
+    color: white;
+    /* height: 25%; */
+    font-size: 1.2vw;
+    font-weight: 700;
+    width: 3vw;
+    height: 3vw;
+    background-color: rgba(30, 255, 135, 0.9);
+    border: 2px solid white;
+    border-radius: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* A_Z LIST SECTION */
+.diccon {
+    height: 25vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+.azdic {
+    height: 90%;
+    /* height: 28vw; */
+    /* width: 50vw; */
+    width: 90%;
+    /* width: 20%; */
+    background-color: rgba(18, 18, 18, 0.5);
+    border-radius: 2vw;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    /* grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(13, 1fr); */
+    color: white;
+    gap: 30px;
+}
+
+.plistCon {
+    height: 90%;
+    width: 90%;
+    background-color: rgba(18, 18, 18, 0.5);
+    border-radius: 2vw;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.azdic2 {
+    height: 90%;
+    /* height: 28vw; */
+    /* width: 50vw; */
+    /* width: 90%; */
+    width: 15%;
+    /* background-color: rgba(18, 18, 18, 0.5); */
+    /* border-radius: 1vw; */
+    /* padding: 5px; */
+    /* border: 2px solid rgba(255, 255, 255, 0.8); */
+    display: grid;
+    /* grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(26, 1fr); */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    color: white;
+    /* overflow: hidden; */
+    /* gap: 0.5vw; */
+    /* gap: 1px; */
+}
+
+.azdic2 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
+    text-underline-offset: 0.3vw;
+    /* background-color: rgba(25, 25, 25, 1); */
+    /* border: 2px solid rgba(30, 255, 135, 0.9); */
+    /* border: 1px solid rgba(255, 255, 255, 0.8); */
+    /* border-radius: 2vw; */
+    font-size: 1vw;
+    /* font-size: 0.4vw; */
+    transition: all 0.5s ease;
+}
+
+.azdic2 div:hover {
+    background-color: rgba(30, 255, 135, 0.9);
+    cursor: pointer;
+}
+
+.plistPic {
+    display: flex;
+    /* background: url(./assets/1914_International_Lawn_Tennis_Challenge.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    width: 85%;
+    height: 90%;
+    gap: 2vw;
+    /* border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 1vw; */
+    /* overflow: hidden; */
+}
+
+.placePic {
+    display: flex;
+    background: url(./assets/1914_International_Lawn_Tennis_Challenge.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 1vw;
+}
+
+.plya {
+    height: 100%;
+    width: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: none;
+    flex-direction: column;
+    gap: 0.5vw;
+    /* background-color: rgba(18, 18, 18, 0.5); */
+    /* border-radius: 2vw; */
+    /* padding: 15px; */
+}
+
+.bcktoaz {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 3vw;
+    background-color: rgba(18, 18, 18, 1);
+    /* background-color: black; */
+    opacity: 0.6;
+    color: white;
+    border-radius: 3vw;
+    transition: all 0.5s ease;
+}
+
+.bcktoaz:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.plya::-webkit-scrollbar {
+    width: 0.95vw;
+    /* border: rgba(255, 255, 255, 0.7); */
+    /* border-radius: 10px; */
+}
+
+.plya::-webkit-scrollbar-track {
+    background-color: #181818;
+    border-radius: 1vw;
+}
+
+.plya::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 1vw;
+    border: 5px solid #181818;
+    background-clip: content-box;
+    cursor: pointer;
+    /* width: 100%; */
+}
+
+.plya::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+
+.plya-ent {
+    width: 98%;
+    /* background-color: black; */
+    background-color: rgba(18, 18, 18, 1);
+    height: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid rgba(255, 255, 255, 0.5); */
+    border-radius: 1vw;
+    /* justify-content: center; */
+    transition: all 0.3s ease;
+}
+
+.plya-ent:hover {
+    cursor: pointer;
+    background-color: rgba(30, 255, 135, 0.7);
+}
+
+.plya-ent h1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* margin-left: 10px; */
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 1vw;
+    font-weight: 400;
+}
+
+.titt h6 {
+    margin: 0;
+    color: white;
+    font-size: 0.8vw;
+    font-weight: 200;
+    height: 1vw;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.azdic div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(25, 25, 25, 1);
+    border: 2px solid rgba(30, 255, 135, 0.9);
+    border-radius: 30px;
+    font-size: 1.5vw;
+    transition: all 0.5s ease;
+}
+
+.azdic div:hover {
+    background-color: rgba(30, 255, 135, 0.9);
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* ------------------ PLAYER OF THE DAY SECTION ------------------- */
+.potdCont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.left-side-player {
+    /* background-color: black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 70vh; */
+    height: 95%;
+    width: 32vw;
+    /* padding-right: 90px; */
+    margin: 0;
+}
+
+#pic-credit {
+    margin-left: 2.6vw;
+    margin-bottom: 2.6vw;
+}
+
+#pic-credit:hover {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8)) /* White glow */;
+}
+
+.pic-hover-info {
+    position: absolute;
+    background: rgba(18, 18, 18, 0.75);
+    color: white;
+    padding: 0.6vw;
+    height: 1vw;
+    /* width: 200px; */
+    border-radius: 1vw;
+    pointer-events: none; /* allow mouse to pass through */
+    white-space: nowrap;
+    display: none; /* hidden by default */
+    z-index: 1000;
+    font-size: 0.8vw;
+}
+
+.player-photo {
+    /* background-color: red; */
+    /* position: absolute; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    background: url('./assets/Players/Ben_Shelton\,_aufgenommen_an_Swiss_Indoors_Basel_2024.jpg');
+    /* background: url('./assets/Players/Y_Bu_WMQ23_\(53062101020\).jpg'); */
+    /* background-position: 0 10vh; */
+    /* background: url('./assets/Players/Carlos_Alcaraz_Wimbledon.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-color: rgba(18, 18, 18, 0.8); */
+    width: 30vw;
+    /* height: 150vh; */
+    /* height: 34vw; */
+    height: 100%;
+    /* border-radius: 90px; */
+    border-radius: 5.2vw;
+    border: 5px solid rgba(255, 255, 255, 1);
+    /* justify-content: center; */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    margin: 0;
+    /* margin-right: auto; */
+}
+
+.player-photo .name {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.bio {
+    /* margin: auto; */
+    height: 100%;
+    display: flex;
+}
+
+.name {
+    /* margin: auto; */
+    /* height: 100%; */
+    height: 7.5vw;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* width: 54vw; */
+    width: 100%;
+    /* margin-left: 90px; */
+    /* background-color: #181818; */
+}
+
+.name-flair:nth-child(1) {
+    /* top: 20px; */
+    margin-top: 0.9vw;
+    /* margin-top: -4vw; */
+}
+
+.name-flair:nth-child(2) {
+    /* top: 100px; */
+    margin-top: 4.4vw;
+    /* margin-top: 5.5vw; */
+}
+
+.name-flair {
+    position: absolute;
+    margin-top: 1vw;
+    margin-left: 1vw;
+    /* background-color: rgba(69, 225, 12, 1); */
+    /* background-color: rgba(27, 216, 30, 1); */
+    background-color: rgba(27, 216, 130, 0.8);
+    /* background-color: #1877F2; */
+    /* background-color: red; */
+    /* opacity: 0.5; */
+    color: transparent;
+    /* height: 50px; */
+    height: 2.25vw;
+    /* padding-right: 20px; */
+    /* padding-left: -20px; */
+}
+
+.name2 p, .name-flair p {
+    /* width: 20vw; */
+    display: flex;
+    margin: 0;
+    /* font-weight: 800; */
+    font-weight: 600;
+    /* font-size: 80px; */
+    font-size: 3.5vw;
+    line-height: 1;
+    /* transform: translateY(-10px); */
+}
+
+.name2 p {
+    color: white;
+    transform: translateY(-10px); /* Move it up by 40px */
+}
+
+.bio {
+    display: flex;
+    width: 25vw;
+    /* justify-content: center; */
+    justify-content: end;
+}
+
+.right-text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* height: 100%; */
+    height: 22vw;
+    overflow-y: hidden;
+    /* margin-left: 90px; */
+    /* background-color: beige; */
+}
+
+.section-text {
+    /* margin-top: 40px; */
+    /* width: 90vw; */
+    width: 90%;
+    transition: all 0.75s ease;
+    /* height: 100%; */
+    height: 22vw;
+    /* background-color: blue; */
+    display: flex;
+}
+
+.collapse-arrow {
+    width: 50px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: rgba(18, 18, 18, 0.4);
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 0.4;
+}
+
+#close-pic {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#open-pic {
+    display: none;
+}
+
+.collapse-arrow:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+.table-container2 {
+    font-size: 0.6vw;
+    margin-top: 1.2vw;
+    width: 40vw;
+    /* max-width: 800px; */
+    /* background: white; */
+    background-color: rgba(18, 18, 18, 0.5);
+    /* background-color: red; */
+    border-radius: 1.2vw;
+    box-shadow: 0 4px 20px rgba(27, 216, 130, 0.1);
+    /* box-shadow: 0 4px 20px  rgba(255, 255, 255, 0.1); */
+    padding: 1.2vw;
+    height: 20vw;
+    /* height: 50%; */
+}

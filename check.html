@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleCheck.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class = "navbar">
+        <div class="pop">
+            <i class="fas fa-search"></i>
+        </div>
+        <ul class="nav-items">
+            <li><a onclick="location.href='index.html'" class="nav-link tab">HOME</a></li>
+            <li><a onclick="location.href='ben.html'" class="nav-link tab">ben</a></li>
+            <li><a onclick="location.href='rankings.html'" class="nav-link tab">RANKINGS</a></li>
+            <li><a onclick="location.href='tournaments.html'" class="nav-link tab">TOURNAMENTS</a></li>
+            <li><a onclick="location.href='leaderboards.html'" class="nav-link tab">LEADERBOARDS</a></li>
+            <li><a onclick="location.href='check2.html'" class="nav-link tab">check2</a></li>
+            <li><a class="nav-link search">
+                <i class="fas fa-search"></i>
+            </a></li>
+            <div class="search-container">
+                <input type="text" placeholder="Search...">
+            </div>
+        </ul>
+        <div class="pop close">
+            <i class="fas fa-x"></i>
+        </div>
+    </div>
+    <div class="canvas-container">
+        <canvas id="myCanvas" class="canvas-3d topCourt" width="300" height="300"></canvas>
+    </div>
+    <script src="check.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
+
+
