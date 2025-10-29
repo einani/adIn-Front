@@ -8,7 +8,7 @@ function getMonthNameFromDate(dateString) {
 
 async function loadMain() {
     document.addEventListener("DOMContentLoaded", () => {
-        fetch('data/top150StatFinalizedV2.json')
+        fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/update_stats1025.json')
             .then(response => response.json())
             .then(playerDict => {
                 // Get outer keys (e.g., player names)
@@ -38,7 +38,7 @@ async function loadMain() {
 async function loadStat() {
     document.addEventListener("DOMContentLoaded", () => {
         // fetch('data/edit2_draws.json')
-        fetch('data/update_draws1025.json')
+        fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/update_draws1025.json')
             .then(response2 => response2.json())
             .then(tournDict => {
                 // Get outer keys (e.g., player names)
@@ -107,7 +107,7 @@ async function loadStat() {
 
 function loadTop() {
     document.addEventListener("DOMContentLoaded", () => {
-        fetch('data/live92125rnk.json')
+        fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/update_rank1025.json')
             .then(response3 => response3.json())
             .then(datag => {
                 const grgr = document.querySelector('.topten');
@@ -370,6 +370,7 @@ infoIcon.addEventListener('mouseleave', () => {
 //     // Get last 5
 //     return withEndDates.slice(0, 5);
 // }
+
 
 
 
