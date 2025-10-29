@@ -76,7 +76,7 @@ function cardExp () {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('data/update_rank1025.json')
+    fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/update_rank1025.json')
         .then(response => response.json())
         .then(data => {
             rankPopulate(data);
@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error('Error fetching ranking data:', error);
         });
 });
+
 
 
 
