@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
     //     })
     //     .catch(error => console.error('Error loading JSON:', error));
 
-    fetch('data/top150StatFinalizedV2.json')
+    // fetch('data/top150StatFinalizedV2.json')
+    fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/update_stats1025.json')
         .then(response => response.json())
         .then(datac => {
             Object.keys(datac).forEach(playerId => {
@@ -598,8 +599,8 @@ async function loadAndProcessStats() {
     try {
         // Step 1: Load both JSON files
         const [dataRes, teamRes] = await Promise.all([
-            fetch('data/top150Stat.json'),
-            fetch('data/top150StatFinalizedV2.json')
+            fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/top150Stat1025.json'),
+            fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/update_stats1025.json')
         ]);
 
         if (!dataRes.ok || !teamRes.ok) {
@@ -1543,6 +1544,7 @@ window.addEventListener("resize", () => {
 //     }
 //     picCol = !picCol; // Flip state
 // });
+
 
 
 
