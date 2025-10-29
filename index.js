@@ -5,8 +5,8 @@ const searchItems = [
 ];
 
 // URLs to your JSON files
-const tournamentsJsonUrl = 'data/try3_normalized.json'; // assumed to be an array
-const playersJsonUrl = 'data/top150StatFinalizedV2.json';         // assumed to be an object with keys
+const tournamentsJsonUrl = 'https://raw.githubusercontent.com/einani/adIn-data/main/data/try3_normalized.json';
+const playersJsonUrl = 'https://raw.githubusercontent.com/einani/adIn-data/main/data/update_stats1025.json';
 
 Promise.all([
     fetch(tournamentsJsonUrl).then(res => res.json()),
@@ -218,6 +218,7 @@ window.addEventListener("resize", () => {
     viewportWidth = window.innerWidth;
     document.documentElement.style.setProperty('--vw', `${viewportWidth}px`);
 });
+
 
 
 
