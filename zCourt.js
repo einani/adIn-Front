@@ -693,18 +693,41 @@ function calcStat(zones) {
 }
 
 
+
 // SHOT CHART TABLES AND DATA LOAD
 
 document.addEventListener("DOMContentLoaded", async () => {
     const urlParams2 = new URLSearchParams(window.location.search);
-    const pageId = urlParams2.get('id');
-    // const pageId = getPageId(); // Implement this function as needed
-    try {
-        const response = await fetch('/data/24and25Charting1025.json');
-        if (!response.ok) throw new Error("Failed to fetch JSON");
+    const pageId = urlParams2.get('id'); // The page ID to filter by
 
-        const data = await response.json();
-        
+    // Base URL and file pattern
+    const baseUrl = 'https://raw.githubusercontent.com/einani/adIn-data/main/data/';
+    const baseName = '24and25Charting1025split';
+    const maxFiles = 30; // Adjust if you might have more splits
+
+    // Function to fetch and combine all split JSON files
+    async function fetchAllSplitFiles() {
+        const combinedData = {};
+
+        for (let i = 0; i < maxFiles; i++) {
+            const fileUrl = `${baseUrl}${baseName}${i}.json`;
+            try {
+                const response = await fetch(fileUrl);
+                if (!response.ok) continue; // Skip missing files
+                const data = await response.json();
+
+                // Merge objects
+                Object.assign(combinedData, data);
+            } catch (err) {
+                console.error(`Error fetching ${fileUrl}:`, err);
+            }
+        }
+        return combinedData;
+    }
+
+    try {
+        const data = await fetchAllSplitFiles();
+
         // Filter keys containing the page ID
         const relevantEntries = Object.entries(data).filter(
             ([key, _]) => key.includes(pageId)
@@ -2192,3 +2215,4 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 // 
+
