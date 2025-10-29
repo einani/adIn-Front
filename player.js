@@ -56,20 +56,20 @@ document.addEventListener("DOMContentLoaded", function () {
     //     })
     //     .catch(error => console.error('Error loading JSON:', error));
 
-    fetch('data/top150StatFinalizedV2.json')
+    fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/update_stats1025.json')
         .then(response => response.json())
         .then(datac => {
             if (playerId in datac) {
                 const playerData = datac[playerId];
                 buildPage(playerData);
-                fetch('data/top150bio.json')
+                fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/top150bio.json')
                     .then(response => response.json())
                     .then(datad => {
                         if (playerId in datad) {
                             const playerBio = datad[playerId];
                             buildPageP2(playerBio);
                             // console.log(playerData);
-                            fetch('data/top150Stat.json')
+                            fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/top150Stat1025.json')
                                 .then(response => response.json())
                                 .then(datae => {
                                     buildPageP3(datae);
@@ -641,12 +641,12 @@ const searchItems = [
 ];
 
 // URLs to your JSON files
-const tournamentsJsonUrl = 'data/try3_normalized.json'; // assumed to be an array
-const playersJsonUrl = 'data/top150StatFinalizedV2.json';         // assumed to be an object with keys
+// const tournamentsJsonUrl = 'data/try3_normalized.json'; // assumed to be an array
+// const playersJsonUrl = 'data/top150StatFinalizedV2.json';         // assumed to be an object with keys
 
 Promise.all([
-    fetch(tournamentsJsonUrl).then(res => res.json()),
-    fetch(playersJsonUrl).then(res => res.json())
+    fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/try3_normalized.json').then(res => res.json()),
+    fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/update_stats1025.json').then(res => res.json())
     ]).then(([tournaments, players]) => {
     // 🎾 1. Add tournament entries
     
@@ -1210,3 +1210,4 @@ document.querySelectorAll('.tab-toggle').forEach(button => {
     button.nextElementSibling.style.display = 'none';
     button.innerHTML = button.innerHTML.replace('▼', '▶');
 });
+
