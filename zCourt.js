@@ -1050,7 +1050,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         //                     "trick": {"in": 0, "shank": 0}};
 
 
-        fetch('data/top150StatFinalizedV2.json')
+        fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/update_stats1025.json')
             .then(response => response.json())
             .then(datac => {
                 if (playerId in datac) {
@@ -2182,6 +2182,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 //     camera.updateProjectionMatrix();
 //     renderer.setSize(window.innerWidth, window.innerHeight);
 // });
+
 
 
 
