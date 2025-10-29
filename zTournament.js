@@ -26,7 +26,7 @@ main();
 async function fetchInOrder(tournamentId) {
     try {
         // First fetch: try3_normalized.json
-        const response1 = await fetch('data/try3_normalized.json');
+        const response1 = await fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/try3_normalized.json');
         const datab = await response1.json();
 
         if (tournamentId in datab) {
@@ -48,9 +48,9 @@ async function fetchInOrder(tournamentId) {
         }
 
         // Second fetch: edit2_draws.json
-        const response2 = await fetch('data/update_draws1025.json');
+        const response2 = await fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/update_draws1025.json');
         const data = await response2.json();
-        const response12 = await fetch('data/incomplete_draws2024.json');
+        const response12 = await fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/incomplete_draws2024.json');
         const data1 = await response12.json();
 
         if (tournamentId in data) {
@@ -58,7 +58,7 @@ async function fetchInOrder(tournamentId) {
             displayTournament(tournamentId, tournamentData);
 
             // Third fetch (only if second succeeds): geneva_scores.json
-            const response3 = await fetch('data/update_scores1025.json');
+            const response3 = await fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/update_scores1025.json');
             const scoresDataRaw = await response3.json();
             if (tournamentId in scoresDataRaw) {
                 const scoresData = scoresDataRaw[tournamentId];
@@ -70,7 +70,7 @@ async function fetchInOrder(tournamentId) {
             displayTournament(tournamentId, tournamentData);
 
             // Third fetch (only if second succeeds): geneva_scores.json
-            const response3 = await fetch('data/incomplete_scores2024.json');
+            const response3 = await fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/incomplete_scores2024.json');
             const scoresDataRaw = await response3.json();
             const scoresData = scoresDataRaw[tournamentId];
             populateScores(scoresData);
@@ -80,7 +80,7 @@ async function fetchInOrder(tournamentId) {
         }
 
 
-        const response3 = await fetch('data/top150Stat.json');
+        const response3 = await fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/top150Stat1025.json');
         const dataj = await response3.json();
         const seenPlayers = new Set();
 
@@ -5510,6 +5510,7 @@ expSide.addEventListener("click", () => {
 //         caru.style.transform = `translateY(${-26}vw)`;
 //     });
 // }
+
 
 
 
