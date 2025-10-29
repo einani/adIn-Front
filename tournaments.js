@@ -84,11 +84,11 @@ function getMonthNameFromDate(dateString) {
 async function loadEverything() {
     document.addEventListener("DOMContentLoaded", async () => {
         try {
-            const response = await fetch('data/try3_normalized.json');
+            const response = await fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/try3_normalized.json');
             const tournamentDict = await response.json();
-            const datafResponse = await fetch('data/update_draws1025.json');
+            const datafResponse = await fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/update_draws1025.json');
             const dataf = await datafResponse.json();
-            const datagResponse = await fetch('data/incomplete_draws2024.json');
+            const datagResponse = await fetch('https://raw.githubusercontent.com/einani/adIn-data/main/data/incomplete_draws2024.json');
             const datag = await datagResponse.json();
 
             const tournaments = Object.values(tournamentDict);
@@ -361,6 +361,7 @@ expSide.addEventListener("click", () => {
     }
     isExpanded = !isExpanded; // Flip state
 });
+
 
 
 
